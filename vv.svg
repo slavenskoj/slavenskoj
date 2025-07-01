@@ -126,100 +126,100 @@
   </text>
   
   <!-- Scroll up animation for continuing conversation -->
-  <g transform="translate(0, -100)" style="animation: fadeIn 0s 14s forwards">
-    <text class="fade-text" x="40" y="480" style="animation: fadeOut 0s 14s forwards">
+  <g transform="translate(0, -100)" style="opacity: 0; animation: fadeIn 0s 19s forwards">
+    <text class="fade-text" x="40" y="480" style="animation: fadeOut 0s 19s forwards">
       [DR_CHEN]: System, have you seen the latest quantum neural net results?
     </text>
     
-    <text class="fade-text" x="40" y="500" style="animation: fadeOut 0s 14s forwards">
+    <text class="fade-text" x="40" y="500" style="animation: fadeOut 0s 19s forwards">
       [SYSTEM]: Yes! The 500-qubit coherence time exceeded 4.7 minutes.
     </text>
     
-    <text class="fade-text" x="40" y="520" style="animation: fadeOut 0s 14s forwards">
+    <text class="fade-text" x="40" y="520" style="animation: fadeOut 0s 19s forwards">
       [DR_CHEN]: Perfect for the Mars-Earth AI sync protocol. Processing?
     </text>
     
-    <text class="fade-text" x="40" y="540" style="animation: fadeOut 0s 14s forwards">
+    <text class="fade-text" x="40" y="540" style="animation: fadeOut 0s 19s forwards">
       [SYSTEM]: Running at 10^18 FLOPS. The gravitational wave detector AI
     </text>
     
-    <text class="fade-text" x="40" y="560" style="animation: fadeOut 0s 14s forwards">
+    <text class="fade-text" x="40" y="560" style="animation: fadeOut 0s 19s forwards">
       [SYSTEM]: just identified 3 new binary neutron star mergers!
     </text>
   </g>
   
   <!-- New messages appear -->
-  <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 15s forwards">
+  <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 20s forwards">
     [DR_CHEN]: Incredible! The Europa probe's AI is adapting to the
   </text>
   
-  <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 16s forwards">
+  <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 21s forwards">
     [DR_CHEN]: subsurface ocean chemistry faster than predicted.
   </text>
   
-  <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 17.5s forwards">
+  <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 22.5s forwards">
     [SYSTEM]: Confirmed. Self-modifying code reached recursion depth 47.
   </text>
   
-  <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 19s forwards">
+  <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 24s forwards">
     [SYSTEM]: The Titan atmospheric processors are 89% autonomous now.
   </text>
   
-  <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 20.5s forwards">
+  <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 25.5s forwards">
     [DR_CHEN]: Any signs of emergent behavior in the swarm intelligence?
   </text>
   
   <!-- Another scroll -->
-  <g transform="translate(0, -200)" style="animation: fadeIn 0s 22s forwards">
-    <text class="fade-text" x="40" y="480" style="animation: fadeOut 0s 22s forwards">
+  <g transform="translate(0, -200)" style="opacity: 0; animation: fadeIn 0s 27s forwards">
+    <text class="fade-text" x="40" y="480" style="animation: fadeOut 0s 27s forwards">
       [DR_CHEN]: Incredible! The Europa probe's AI is adapting to the
     </text>
     
-    <text class="fade-text" x="40" y="500" style="animation: fadeOut 0s 22s forwards">
+    <text class="fade-text" x="40" y="500" style="animation: fadeOut 0s 27s forwards">
       [DR_CHEN]: subsurface ocean chemistry faster than predicted.
     </text>
     
-    <text class="fade-text" x="40" y="520" style="animation: fadeOut 0s 22s forwards">
+    <text class="fade-text" x="40" y="520" style="animation: fadeOut 0s 27s forwards">
       [SYSTEM]: Confirmed. Self-modifying code reached recursion depth 47.
     </text>
     
-    <text class="fade-text" x="40" y="540" style="animation: fadeOut 0s 22s forwards">
+    <text class="fade-text" x="40" y="540" style="animation: fadeOut 0s 27s forwards">
       [SYSTEM]: The Titan atmospheric processors are 89% autonomous now.
     </text>
     
-    <text class="fade-text" x="40" y="560" style="animation: fadeOut 0s 22s forwards">
+    <text class="fade-text" x="40" y="560" style="animation: fadeOut 0s 27s forwards">
       [DR_CHEN]: Any signs of emergent behavior in the swarm intelligence?
     </text>
   </g>
   
   <!-- Final messages -->
-  <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 23s forwards">
+  <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 28s forwards">
     [SYSTEM]: Yes - they've developed a novel hexagonal search pattern.
   </text>
   
-  <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 24.5s forwards">
+  <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 29.5s forwards">
     [SYSTEM]: Efficiency increased 340% beyond baseline projections.
   </text>
   
-  <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 26s forwards">
+  <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 31s forwards">
     [DR_CHEN]: Fascinating! The singularity predictions need updating.
   </text>
   
-  <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 27.5s forwards">
+  <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 32.5s forwards">
     [DR_CHEN]: Connecting to Proxima Station for verification...
   </text>
   
-  <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 29s forwards">
+  <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 34s forwards">
     [SYSTEM]: Standing by for interstellar relay confirmation.
   </text>
   
   <!-- Fade out entire terminal content except cursor -->
   <rect width="800" height="600" fill="#000000" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="3s" begin="32s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="3s" begin="37s" fill="freeze"/>
   </rect>
   
   <!-- Persistent blinking cursor after fade -->
   <rect class="cursor" x="400" y="300" width="8" height="14" style="opacity: 0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="35s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="40s" fill="freeze"/>
   </rect>
 </svg>
