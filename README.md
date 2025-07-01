@@ -1,5 +1,5 @@
 
-![Stellated Dodecahedron](./dodecahedron.svg)
+![Stellated Dodecahedron](./vv.svg)
 
 
   
