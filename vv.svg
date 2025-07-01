@@ -25,7 +25,6 @@
       
       .cursor {
         fill: #00ff00;
-        animation: blink 1s infinite;
       }
     </style>
     
@@ -201,5 +200,6 @@
   <!-- Persistent blinking cursor after fade -->
   <rect class="cursor" x="400" y="300" width="8" height="14" style="opacity: 0">
     <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="40s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;1;0;0" dur="1s" begin="40.1s" repeatCount="indefinite"/>
   </rect>
 </svg>
