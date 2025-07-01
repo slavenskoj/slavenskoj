@@ -111,8 +111,8 @@
   </text>
   
   <!-- Blinking cursor -->
-  <rect class="cursor" x="240" y="545" width="8" height="14" style="animation-delay: 9.5s">
-    <animate attributeName="x" from="240" to="240" dur="0.1s" begin="9.5s" fill="freeze"/>
+  <rect class="cursor" x="260" y="525" width="8" height="14" style="animation-delay: 9.5s">
+    <animate attributeName="x" from="260" to="260" dur="0.1s" begin="9.5s" fill="freeze"/>
   </rect>
   
   <!-- Fade out entire terminal -->
