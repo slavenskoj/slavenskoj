@@ -73,11 +73,11 @@
     </text>
     
     <text class="terminal-text" x="40" y="260" style="animation: fadeIn 0.3s 4s forwards">
-      Username: SYSTEM
+      Username: 
     </text>
     
-    <text class="terminal-text" x="140" y="260" style="animation: fadeIn 0.3s 5s forwards">
-      SYSTEM
+    <text class="terminal-text" x="130" y="260" style="animation: fadeIn 0.3s 5s forwards">
+      SLAVENSKOJ
     </text>
     
     <text class="terminal-text" x="40" y="280" style="animation: fadeIn 0.3s 6s forwards">
@@ -102,29 +102,29 @@
     </text>
     
     <text class="terminal-text" x="40" y="440" style="animation: fadeIn 0.3s 11.5s forwards">
-      %CHAT-I-CONNECTED, Connected to user DR_CHEN on node MARS_STATION_7
+      %CHAT-I-CONNECTED, Connected to user DR_C on node MARS_STATION_7
     </text>
     
     <!-- Initial chat messages -->
     <g id="chat1">
       <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 12.5s forwards">
-        [DR_CHEN]: System, have you seen the latest quantum neural net results?
+        [DR_C]: System, have you seen the latest quantum neural net results?
       </text>
       
       <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 14s forwards">
-        [SYSTEM]: Yes! The 500-qubit coherence time exceeded 4.7 minutes.
+        [SLAVENSKOJ]: Yes! The 500-qubit coherence time exceeded 4.7 minutes.
       </text>
       
       <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 15.5s forwards">
-        [DR_CHEN]: Perfect for the Mars-Earth AI sync protocol. Processing?
+        [DR_C]: Perfect for the Mars-Earth AI sync protocol. Processing?
       </text>
       
       <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 17s forwards">
-        [SYSTEM]: Running at 10^18 FLOPS. The gravitational wave detector AI
+        [SLAVENSKOJ]: Running at 10^18 FLOPS. The gravitational wave detector AI
       </text>
       
       <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 18s forwards">
-        [SYSTEM]: just identified 3 new binary neutron star mergers!
+        [SLAVENSKOJ]: just identified 3 new binary neutron star mergers!
       </text>
       
       <!-- Animate this group upward -->
@@ -135,23 +135,23 @@
     <!-- Second set of messages -->
     <g id="chat2" opacity="0">
       <text class="terminal-text" x="40" y="580" opacity="1">
-        [DR_CHEN]: Incredible! The Europa probe's AI is adapting to the
+        [DR_C]: Incredible! The Europa probe's AI is adapting to the
       </text>
       
       <text class="terminal-text" x="40" y="600" opacity="1">
-        [DR_CHEN]: subsurface ocean chemistry faster than predicted.
+        [DR_C]: subsurface ocean chemistry faster than predicted.
       </text>
       
       <text class="terminal-text" x="40" y="620" opacity="1">
-        [SYSTEM]: Confirmed. Self-modifying code reached recursion depth 47.
+        [SLAVENSKOJ]: Confirmed. Self-modifying code reached recursion depth 47.
       </text>
       
       <text class="terminal-text" x="40" y="640" opacity="1">
-        [SYSTEM]: The Titan atmospheric processors are 89% autonomous now.
+        [SLAVENSKOJ]: The Titan atmospheric processors are 89% autonomous now.
       </text>
       
       <text class="terminal-text" x="40" y="660" opacity="1">
-        [DR_CHEN]: Any signs of emergent behavior in the swarm intelligence?
+        [DR_C]: Any signs of emergent behavior in the swarm intelligence?
       </text>
       
       <!-- Fade in and scroll up -->
@@ -167,23 +167,23 @@
     <!-- Third set of messages -->
     <g id="chat3" opacity="0">
       <text class="terminal-text" x="40" y="680" opacity="1">
-        [SYSTEM]: Yes - they've developed a novel hexagonal search pattern.
+        [SLAVENSKOJ]: Yes - they've developed a novel hexagonal search pattern.
       </text>
       
       <text class="terminal-text" x="40" y="700" opacity="1">
-        [SYSTEM]: Efficiency increased 340% beyond baseline projections.
+        [SLAVENSKOJ]: Efficiency increased 340% beyond baseline projections.
       </text>
       
       <text class="terminal-text" x="40" y="720" opacity="1">
-        [DR_CHEN]: Fascinating! The singularity predictions need updating.
+        [DR_C]: Fascinating! The singularity predictions need updating.
       </text>
       
       <text class="terminal-text" x="40" y="740" opacity="1">
-        [DR_CHEN]: Connecting to Proxima Station for verification...
+        [DR_C]: Connecting to Proxima Station for verification...
       </text>
       
       <text class="terminal-text" x="40" y="760" opacity="1">
-        [SYSTEM]: Standing by for interstellar relay confirmation.
+        [SLAVENSKOJ]: Standing by for interstellar relay confirmation.
       </text>
       
       <!-- Fade in and scroll up -->
