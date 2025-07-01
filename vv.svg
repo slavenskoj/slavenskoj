@@ -75,49 +75,53 @@
     Username: SYSTEM
   </text>
   
-  <text class="terminal-text" x="40" y="280" style="animation: fadeIn 0.3s 4.5s forwards">
+  <text class="terminal-text" x="140" y="260" style="animation: fadeIn 0.3s 5s forwards">
+    SYSTEM
+  </text>
+  
+  <text class="terminal-text" x="40" y="280" style="animation: fadeIn 0.3s 6s forwards">
     Password: 
   </text>
   
-  <text class="terminal-text" x="40" y="320" style="animation: fadeIn 0.3s 5s forwards">
+  <text class="terminal-text" x="40" y="320" style="animation: fadeIn 0.3s 8s forwards">
     Welcome to VAX/VMS version V5.5-2 on node ALPHA
   </text>
   
-  <text class="terminal-text" x="40" y="340" style="animation: fadeIn 0.3s 5.5s forwards">
+  <text class="terminal-text" x="40" y="340" style="animation: fadeIn 0.3s 8.5s forwards">
     Last interactive login on Monday, 1-JUL-2025 08:45
   </text>
   
-  <text class="terminal-text" x="40" y="380" style="animation: fadeIn 0.3s 6s forwards">
+  <text class="terminal-text" x="40" y="380" style="animation: fadeIn 0.3s 9.5s forwards">
     $ RUN SYS$SYSTEM:CHAT
   </text>
   
   <!-- Chat session -->
-  <text class="terminal-text" x="40" y="420" style="animation: fadeIn 0.3s 6.5s forwards">
+  <text class="terminal-text" x="40" y="420" style="animation: fadeIn 0.3s 11s forwards">
     %CHAT-I-STARTED, Chat utility V2.1 started
   </text>
   
-  <text class="terminal-text" x="40" y="440" style="animation: fadeIn 0.3s 7s forwards">
+  <text class="terminal-text" x="40" y="440" style="animation: fadeIn 0.3s 11.5s forwards">
     %CHAT-I-CONNECTED, Connected to user DR_CHEN on node MARS_STATION_7
   </text>
   
   <!-- Extended futuristic conversation -->
-  <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 7.5s forwards">
+  <text class="terminal-text" x="40" y="480" style="animation: fadeIn 0.3s 12.5s forwards">
     [DR_CHEN]: System, have you seen the latest quantum neural net results?
   </text>
   
-  <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 9s forwards">
+  <text class="terminal-text" x="40" y="500" style="animation: fadeIn 0.3s 14s forwards">
     [SYSTEM]: Yes! The 500-qubit coherence time exceeded 4.7 minutes.
   </text>
   
-  <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 10.5s forwards">
+  <text class="terminal-text" x="40" y="520" style="animation: fadeIn 0.3s 15.5s forwards">
     [DR_CHEN]: Perfect for the Mars-Earth AI sync protocol. Processing?
   </text>
   
-  <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 12s forwards">
+  <text class="terminal-text" x="40" y="540" style="animation: fadeIn 0.3s 17s forwards">
     [SYSTEM]: Running at 10^18 FLOPS. The gravitational wave detector AI
   </text>
   
-  <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 13s forwards">
+  <text class="terminal-text" x="40" y="560" style="animation: fadeIn 0.3s 18s forwards">
     [SYSTEM]: just identified 3 new binary neutron star mergers!
   </text>
   
