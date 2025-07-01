@@ -130,67 +130,6 @@
       <animateTransform attributeName="transform" type="translate" 
         from="0 0" to="0 -100" dur="0.5s" begin="19s" fill="freeze"/>
     </g>
-    
-    <!-- Second set of messages -->
-    <g id="chat2" opacity="0">
-      <text class="terminal-text" x="40" y="580" opacity="1">
-        [DR_C]: Incredible! The Europa probe's AI is adapting to the
-      </text>
-      
-      <text class="terminal-text" x="40" y="600" opacity="1">
-        [DR_C]: subsurface ocean chemistry faster than predicted.
-      </text>
-      
-      <text class="terminal-text" x="40" y="620" opacity="1">
-        [SLAVENSKOJ]: Confirmed. Self-modifying code reached recursion depth 47.
-      </text>
-      
-      <text class="terminal-text" x="40" y="640" opacity="1">
-        [SLAVENSKOJ]: The Titan atmospheric processors are 89% autonomous now.
-      </text>
-      
-      <text class="terminal-text" x="40" y="660" opacity="1">
-        [DR_C]: Any signs of emergent behavior in the swarm intelligence?
-      </text>
-      
-      <!-- Fade in and scroll up -->
-      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="19.5s" fill="freeze"/>
-      <animateTransform attributeName="transform" type="translate" 
-        from="0 0" to="0 -100" dur="0.5s" begin="19s" fill="freeze"/>
-      
-      <!-- Second scroll -->
-      <animateTransform attributeName="transform" type="translate" 
-        from="0 -100" to="0 -200" dur="0.5s" begin="27s" fill="freeze" additive="sum"/>
-    </g>
-    
-    <!-- Third set of messages -->
-    <g id="chat3" opacity="0">
-      <text class="terminal-text" x="40" y="680" opacity="1">
-        [SLAVENSKOJ]: Yes - they've developed a novel hexagonal search pattern.
-      </text>
-      
-      <text class="terminal-text" x="40" y="700" opacity="1">
-        [SLAVENSKOJ]: Efficiency increased 340% beyond baseline projections.
-      </text>
-      
-      <text class="terminal-text" x="40" y="720" opacity="1">
-        [DR_C]: Fascinating! The singularity predictions need updating.
-      </text>
-      
-      <text class="terminal-text" x="40" y="740" opacity="1">
-        [DR_C]: Connecting to Proxima Station for verification...
-      </text>
-      
-      <text class="terminal-text" x="40" y="760" opacity="1">
-        [SLAVENSKOJ]: Standing by for interstellar relay confirmation.
-      </text>
-      
-      <!-- Fade in and scroll up -->
-      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="27.5s" fill="freeze"/>
-      <animateTransform attributeName="transform" type="translate" 
-        from="0 0" to="0 -200" dur="0.5s" begin="27s" fill="freeze"/>
-    </g>
-  </g>
   
   <!-- Fade out entire terminal content -->
   <rect width="800" height="600" fill="#000000" opacity="0">
