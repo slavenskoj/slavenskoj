@@ -2,7 +2,7 @@
   <defs>
     <!-- Phosphor glow filter -->
     <filter id="phosphorGlow">
-      <feGaussianBlur stdDeviation="0.25" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="0.05" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
