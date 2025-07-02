@@ -1,5 +1,5 @@
 
-![Stellated Dodecahedron](./VT220_CAPTURE.svg)
+![Stellated Dodecahedron](./VT220CAPTURE_20250702.SVG)
 
 
   
