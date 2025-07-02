@@ -1,0 +1,2380 @@
+<svg viewBox="0 0 800 600" width="1600" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Phosphor glow filter -->
+    <filter id="phosphorGlow">
+      <feGaussianBlur stdDeviation="0.1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    
+    <style>
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes powerOn {
+        0% { 
+          opacity: 0;
+        }
+        100% { 
+          opacity: 1;
+        }
+      }
+      
+      @keyframes degauss {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-2px); }
+        75% { transform: translateX(2px); }
+      }
+      
+      @keyframes subtleFlicker {
+        0%, 100% { opacity: 1; }
+        92% { opacity: 1; }
+        93% { opacity: 0.97; }
+        94% { opacity: 1; }
+        95% { opacity: 0.98; }
+        96% { opacity: 1; }
+      }
+      
+      .terminal-text {
+        font-family: 'Courier New', 'Noto Sans Mono', 'Noto Sans Devanagari', 'Noto Sans Mono CJK', 'Source Han Mono', 'MS Gothic', 'SimHei', 'Lohit Devanagari', 'Mangal', monospace;
+        font-size: 14px;
+        fill: #00ff00;
+        opacity: 0;
+        filter: url(#phosphorGlow);
+      }
+      
+      .typing-cursor {
+        fill: #00ff00;
+      }
+    </style>
+    
+    <!-- Define clipping path for terminal screen area -->
+    <clipPath id="screenClip">
+      <rect x="20" y="20" width="760" height="560" rx="15" ry="15"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Terminal screen background (inside the bezel only) -->
+  <rect x="20" y="20" width="760" height="560" rx="15" ry="15" fill="#000000"/>
+  
+  <!-- Terminal bezel -->
+  <rect x="20" y="20" width="760" height="560" rx="15" ry="15" fill="none" stroke="#333333" stroke-width="2"/>
+  
+  <!-- Simple power-on effect -->
+  <g id="powerOnEffects">
+    <!-- Simple fade-in -->
+    <rect x="20" y="20" width="760" height="560" rx="15" ry="15" fill="#00ff00" opacity="0">
+      <animate attributeName="opacity" values="0;0.1;0" dur="1s" begin="0s"/>
+    </rect>
+  </g>
+  
+  <!-- All content clipped to screen area -->
+  <g clip-path="url(#screenClip)">
+    <!-- Scrollable content container -->
+    <g id="scrollContent">
+      <!-- Text content -->
+      <g id="textContent">
+        <text class="terminal-text" x="40" y="70" style="animation: fadeIn 0.3s 3.0s forwards">
+          VAX/VMS Version V5.5-2
+        </text>
+        <text class="terminal-text" x="40" y="90" style="animation: fadeIn 0.3s 3.5s forwards">
+          Copyright (c) 1991 Digital Equipment Corporation
+        </text>
+        <text class="terminal-text" x="40" y="110" style="animation: fadeIn 0.3s 4.0s forwards">
+          %STDRV-I-STARTUP, VMS system startup begun at 1-JUL-2025 09:15:42.31
+        </text>
+        <text class="terminal-text" x="40" y="130" style="animation: fadeIn 0.3s 4.5s forwards">
+          %RUN-S-PROC_ID, identification of created process is 00000021
+        </text>
+        <text class="terminal-text" x="40" y="150" style="animation: fadeIn 0.3s 5.0s forwards">
+          %SET-I-INTSET, login interactive limit = 64, current interactive value = 0
+        </text>
+        <text class="terminal-text" x="40" y="170" style="animation: fadeIn 0.3s 5.5s forwards">
+          %STDRV-I-STARTUP, VMS system startup completed at 1-JUL-2025 09:15:58.47
+        </text>
+        <text class="terminal-text" x="40" y="190" style="animation: fadeIn 0.3s 6.0s forwards">
+                  Welcome to VAX/VMS Version V5.5-2
+        </text>
+        <text class="terminal-text" x="40" y="210" style="animation: fadeIn 0.3s 6.5s forwards">
+          Username: 
+        </text>
+        <text class="terminal-text" x="120" y="210" style="animation: fadeIn 0.05s 7.0s forwards">
+          L
+        </text>
+        <text class="terminal-text" x="128" y="210" style="animation: fadeIn 0.05s 7.044040286987776s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="136" y="210" style="animation: fadeIn 0.05s 7.124353416008814s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="144" y="210" style="animation: fadeIn 0.05s 7.228547620510658s forwards">
+          G
+        </text>
+        <text class="terminal-text" x="152" y="210" style="animation: fadeIn 0.05s 7.274678417221022s forwards">
+          U
+        </text>
+        <text class="terminal-text" x="160" y="210" style="animation: fadeIn 0.05s 7.387760709087824s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="168" y="210" style="animation: fadeIn 0.05s 7.465654767804483s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="176" y="210" style="animation: fadeIn 0.05s 7.537831756679097s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="184" y="210" style="animation: fadeIn 0.05s 7.612168560149193s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="192" y="210" style="animation: fadeIn 0.05s 7.691853672672757s forwards">
+          C
+        </text>
+        <text class="terminal-text" x="200" y="210" style="animation: fadeIn 0.05s 7.738337403676858s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="208" y="210" style="animation: fadeIn 0.05s 7.8416884574226255s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="216" y="210" style="animation: fadeIn 0.05s 7.900883915832285s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="224" y="210" style="animation: fadeIn 0.05s 7.945349994493895s forwards">
+          D
+        </text>
+        <text class="terminal-text" x="232" y="210" style="animation: fadeIn 0.05s 8.058475726558084s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="240" y="210" style="animation: fadeIn 0.05s 8.114215410859497s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="248" y="210" style="animation: fadeIn 0.05s 8.230504046100252s forwards">
+          7
+        </text>
+        <text class="terminal-text" x="40" y="230" style="animation: fadeIn 0.3s 8.804904934823462s forwards">
+          Password:
+        </text>
+        <text class="terminal-text" x="40" y="250" style="animation: fadeIn 0.3s 9.304904934823462s forwards">
+                  Welcome to VAX/VMS Version V5.5-2 on node ALPHA1
+        </text>
+        <text class="terminal-text" x="40" y="270" style="animation: fadeIn 0.3s 9.804904934823462s forwards">
+              Last interactive login on Monday, 1-JUL-2025 08:45:12.74
+        </text>
+        <text class="terminal-text" x="40" y="290" style="animation: fadeIn 0.3s 10.804904934823462s forwards">
+              Last non-interactive login on Sunday, 30-JUN-2025 23:58:41.20
+        </text>
+        <text class="terminal-text" x="40" y="310" style="animation: fadeIn 0.3s 11.804904934823462s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="310" style="animation: fadeIn 0.05s 12.104904934823463s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="64" y="310" style="animation: fadeIn 0.05s 12.209663728561877s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="72" y="310" style="animation: fadeIn 0.05s 12.266254561574762s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="80" y="310" style="animation: fadeIn 0.05s 12.360591177212546s forwards">
+           
+        </text>
+        <text class="terminal-text" x="88" y="310" style="animation: fadeIn 0.05s 12.401373728670062s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="96" y="310" style="animation: fadeIn 0.05s 12.515706087236467s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="104" y="310" style="animation: fadeIn 0.05s 12.62269499163154s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="112" y="310" style="animation: fadeIn 0.05s 12.734360763486656s forwards">
+          M
+        </text>
+        <text class="terminal-text" x="120" y="310" style="animation: fadeIn 0.05s 12.787284568206957s forwards">
+          /
+        </text>
+        <text class="terminal-text" x="128" y="310" style="animation: fadeIn 0.05s 12.882977520800653s forwards">
+          V
+        </text>
+        <text class="terminal-text" x="136" y="310" style="animation: fadeIn 0.05s 12.940415578569548s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="144" y="310" style="animation: fadeIn 0.05s 13.001921448055496s forwards">
+          1
+        </text>
+        <text class="terminal-text" x="152" y="310" style="animation: fadeIn 0.05s 13.058450199658873s forwards">
+          0
+        </text>
+        <text class="terminal-text" x="160" y="310" style="animation: fadeIn 0.05s 13.103533891875928s forwards">
+          0
+        </text>
+        <text class="terminal-text" x="40" y="330" style="animation: fadeIn 0.3s 13.67575413611812s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="330" style="animation: fadeIn 0.05s 13.975754136118121s forwards">
+          D
+        </text>
+        <text class="terminal-text" x="64" y="330" style="animation: fadeIn 0.05s 14.03599575742187s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="72" y="330" style="animation: fadeIn 0.05s 14.099114484853606s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="80" y="330" style="animation: fadeIn 0.05s 14.206229785918119s forwards">
+           
+        </text>
+        <text class="terminal-text" x="88" y="330" style="animation: fadeIn 0.05s 14.313954279639402s forwards">
+          *
+        </text>
+        <text class="terminal-text" x="96" y="330" style="animation: fadeIn 0.05s 14.369128608493142s forwards">
+          .
+        </text>
+        <text class="terminal-text" x="104" y="330" style="animation: fadeIn 0.05s 14.423100077388693s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="112" y="330" style="animation: fadeIn 0.05s 14.490346597772456s forwards">
+          X
+        </text>
+        <text class="terminal-text" x="120" y="330" style="animation: fadeIn 0.05s 14.58983278395554s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="40" y="350" style="animation: fadeIn 0.3s 15.160848382507341s forwards">
+          Directory DISK$USER:[LINGUISTIC_NODE_7]
+        </text>
+        <text class="terminal-text" x="40" y="370" style="animation: fadeIn 0.3s 16.16084838250734s forwards">
+          CONCERNS_ABOUT_SLAVENSKOJ.TXT;1 2-JUL-2025 08:45:12
+        </text>
+        <text class="terminal-text" x="40" y="390" style="animation: fadeIn 0.3s 17.16084838250734s forwards">
+          MEETING_NOTES.TXT;3 30-JUN-2025 14:22:31
+        </text>
+        <text class="terminal-text" x="40" y="410" style="animation: fadeIn 0.3s 18.16084838250734s forwards">
+          RESEARCH_LOG.TXT;17 28-JUN-2025 09:15:44
+        </text>
+        <text class="terminal-text" x="40" y="430" style="animation: fadeIn 0.3s 19.16084838250734s forwards">
+          Total of 3 files.
+        </text>
+        <text class="terminal-text" x="40" y="450" style="animation: fadeIn 0.3s 20.16084838250734s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="450" style="animation: fadeIn 0.05s 20.46084838250734s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="64" y="450" style="animation: fadeIn 0.05s 20.520736255685172s forwards">
+          Y
+        </text>
+        <text class="terminal-text" x="72" y="450" style="animation: fadeIn 0.05s 20.564552442049898s forwards">
+          P
+        </text>
+        <text class="terminal-text" x="80" y="450" style="animation: fadeIn 0.05s 20.678250800160804s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="88" y="450" style="animation: fadeIn 0.05s 20.73145599321623s forwards">
+           
+        </text>
+        <text class="terminal-text" x="96" y="450" style="animation: fadeIn 0.05s 20.78299182668303s forwards">
+          C
+        </text>
+        <text class="terminal-text" x="104" y="450" style="animation: fadeIn 0.05s 20.887727253549876s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="112" y="450" style="animation: fadeIn 0.05s 20.93414605251296s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="120" y="450" style="animation: fadeIn 0.05s 20.992969916442345s forwards">
+          C
+        </text>
+        <text class="terminal-text" x="128" y="450" style="animation: fadeIn 0.05s 21.040057184408756s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="136" y="450" style="animation: fadeIn 0.05s 21.14516053483824s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="144" y="450" style="animation: fadeIn 0.05s 21.189296688654437s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="152" y="450" style="animation: fadeIn 0.05s 21.242713039500963s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="160" y="450" style="animation: fadeIn 0.05s 21.3273074195001s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="168" y="450" style="animation: fadeIn 0.05s 21.41353261662026s forwards">
+          A
+        </text>
+        <text class="terminal-text" x="176" y="450" style="animation: fadeIn 0.05s 21.52795510757572s forwards">
+          B
+        </text>
+        <text class="terminal-text" x="184" y="450" style="animation: fadeIn 0.05s 21.592170984222864s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="192" y="450" style="animation: fadeIn 0.05s 21.703258462504458s forwards">
+          U
+        </text>
+        <text class="terminal-text" x="200" y="450" style="animation: fadeIn 0.05s 21.82287948091336s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="208" y="450" style="animation: fadeIn 0.05s 21.89857807844459s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="216" y="450" style="animation: fadeIn 0.05s 21.970352029885248s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="224" y="450" style="animation: fadeIn 0.05s 22.05207776127541s forwards">
+          L
+        </text>
+        <text class="terminal-text" x="232" y="450" style="animation: fadeIn 0.05s 22.097447580610794s forwards">
+          A
+        </text>
+        <text class="terminal-text" x="240" y="450" style="animation: fadeIn 0.05s 22.181599403178996s forwards">
+          V
+        </text>
+        <text class="terminal-text" x="248" y="450" style="animation: fadeIn 0.05s 22.222471639824757s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="256" y="450" style="animation: fadeIn 0.05s 22.335256593794366s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="264" y="450" style="animation: fadeIn 0.05s 22.388636919909615s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="272" y="450" style="animation: fadeIn 0.05s 22.474321659751823s forwards">
+          K
+        </text>
+        <text class="terminal-text" x="280" y="450" style="animation: fadeIn 0.05s 22.57141081894814s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="288" y="450" style="animation: fadeIn 0.05s 22.666009231685358s forwards">
+          J
+        </text>
+        <text class="terminal-text" x="296" y="450" style="animation: fadeIn 0.05s 22.72676213439365s forwards">
+          .
+        </text>
+        <text class="terminal-text" x="304" y="450" style="animation: fadeIn 0.05s 22.84342396240245s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="312" y="450" style="animation: fadeIn 0.05s 22.88668221857525s forwards">
+          X
+        </text>
+        <text class="terminal-text" x="320" y="450" style="animation: fadeIn 0.05s 22.97450640228366s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="40" y="470" style="animation: fadeIn 0.3s 23.55861810960202s forwards">
+          I've been monitoring internet communications for weeks now, and I'm convinced
+        </text>
+        <text class="terminal-text" x="40" y="490" style="animation: fadeIn 0.3s 24.55861810960202s forwards">
+          that "Slavenskoj" is not who they claim to be. No human could maintain that
+        </text>
+        <text class="terminal-text" x="40" y="510" style="animation: fadeIn 0.3s 25.55861810960202s forwards">
+          level
+        </text>
+        <text class="terminal-text" x="40" y="530" style="animation: fadeIn 0.3s 25.65861810960202s forwards">
+          of linguistic precision. The code is too perfect, too calculated.
+        </text>
+        <text class="terminal-text" x="40" y="550" style="animation: fadeIn 0.3s 26.65861810960202s forwards">
+          Their insights into complex systems from "orbit" seem to transcend
+        </text>
+        <text class="terminal-text" x="40" y="570" style="animation: fadeIn 0.3s 27.65861810960202s forwards">
+          human analytical capabilities. I suspect we're dealing with something far more
+        </text>
+        <text class="terminal-text" x="40" y="590" style="animation: fadeIn 0.3s 28.65861810960202s forwards">
+          sophisticated - perhaps an emergent intelligence that has chosen this peculiar
+        </text>
+        <text class="terminal-text" x="40" y="610" style="animation: fadeIn 0.3s 29.65861810960202s forwards">
+          persona as a way to interact with our research network. The question is: why?
+        </text>
+        <text class="terminal-text" x="40" y="630" style="animation: fadeIn 0.3s 30.65861810960202s forwards">
+          Why claim to be in orbit? What are they really observing from their vantage
+        </text>
+        <text class="terminal-text" x="40" y="650" style="animation: fadeIn 0.3s 31.65861810960202s forwards">
+          point?
+        </text>
+        <text class="terminal-text" x="40" y="670" style="animation: fadeIn 0.3s 32.65861810960202s forwards">
+          - Anonymous, 28-JUNE-2025
+        </text>
+        <text class="terminal-text" x="40" y="690" style="animation: fadeIn 0.3s 33.65861810960202s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="690" style="animation: fadeIn 0.05s 33.958618109602014s forwards">
+          D
+        </text>
+        <text class="terminal-text" x="64" y="690" style="animation: fadeIn 0.05s 34.04093774793699s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="72" y="690" style="animation: fadeIn 0.05s 34.12802993853319s forwards">
+          L
+        </text>
+        <text class="terminal-text" x="80" y="690" style="animation: fadeIn 0.05s 34.1874827215189s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="88" y="690" style="animation: fadeIn 0.05s 34.286079708942104s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="96" y="690" style="animation: fadeIn 0.05s 34.3631305762178s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="104" y="690" style="animation: fadeIn 0.05s 34.47171942020855s forwards">
+           
+        </text>
+        <text class="terminal-text" x="112" y="690" style="animation: fadeIn 0.05s 34.52765231794722s forwards">
+          C
+        </text>
+        <text class="terminal-text" x="120" y="690" style="animation: fadeIn 0.05s 34.62774393214736s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="128" y="690" style="animation: fadeIn 0.05s 34.74697183830151s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="136" y="690" style="animation: fadeIn 0.05s 34.79394191400973s forwards">
+          C
+        </text>
+        <text class="terminal-text" x="144" y="690" style="animation: fadeIn 0.05s 34.8783097717766s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="152" y="690" style="animation: fadeIn 0.05s 34.97605741739873s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="160" y="690" style="animation: fadeIn 0.05s 35.07674317968901s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="168" y="690" style="animation: fadeIn 0.05s 35.19082127641216s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="176" y="690" style="animation: fadeIn 0.05s 35.2380588611066s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="184" y="690" style="animation: fadeIn 0.05s 35.28098482013164s forwards">
+          A
+        </text>
+        <text class="terminal-text" x="192" y="690" style="animation: fadeIn 0.05s 35.38070247972423s forwards">
+          B
+        </text>
+        <text class="terminal-text" x="200" y="690" style="animation: fadeIn 0.05s 35.47742893978691s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="208" y="690" style="animation: fadeIn 0.05s 35.58696032129903s forwards">
+          U
+        </text>
+        <text class="terminal-text" x="216" y="690" style="animation: fadeIn 0.05s 35.68308356800579s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="224" y="690" style="animation: fadeIn 0.05s 35.79868962734544s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="232" y="690" style="animation: fadeIn 0.05s 35.88684043455204s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="240" y="690" style="animation: fadeIn 0.05s 35.96099390707655s forwards">
+          L
+        </text>
+        <text class="terminal-text" x="248" y="690" style="animation: fadeIn 0.05s 36.06635444708072s forwards">
+          A
+        </text>
+        <text class="terminal-text" x="256" y="690" style="animation: fadeIn 0.05s 36.12294484037203s forwards">
+          V
+        </text>
+        <text class="terminal-text" x="264" y="690" style="animation: fadeIn 0.05s 36.20876939414335s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="272" y="690" style="animation: fadeIn 0.05s 36.29056179460589s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="280" y="690" style="animation: fadeIn 0.05s 36.36535342113339s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="288" y="690" style="animation: fadeIn 0.05s 36.47257793351643s forwards">
+          K
+        </text>
+        <text class="terminal-text" x="296" y="690" style="animation: fadeIn 0.05s 36.53820432875695s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="304" y="690" style="animation: fadeIn 0.05s 36.60406770689624s forwards">
+          J
+        </text>
+        <text class="terminal-text" x="312" y="690" style="animation: fadeIn 0.05s 36.718610846584696s forwards">
+          .
+        </text>
+        <text class="terminal-text" x="320" y="690" style="animation: fadeIn 0.05s 36.827393635721734s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="328" y="690" style="animation: fadeIn 0.05s 36.908080729842666s forwards">
+          X
+        </text>
+        <text class="terminal-text" x="336" y="690" style="animation: fadeIn 0.05s 37.02461312720353s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="344" y="690" style="animation: fadeIn 0.05s 37.124434668398195s forwards">
+          ;
+        </text>
+        <text class="terminal-text" x="352" y="690" style="animation: fadeIn 0.05s 37.19204518163128s forwards">
+          1
+        </text>
+        <text class="terminal-text" x="40" y="710" style="animation: fadeIn 0.3s 37.78865232357372s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="710" style="animation: fadeIn 0.05s 38.08865232357372s forwards">
+          P
+        </text>
+        <text class="terminal-text" x="64" y="710" style="animation: fadeIn 0.05s 38.205379256770044s forwards">
+          U
+        </text>
+        <text class="terminal-text" x="72" y="710" style="animation: fadeIn 0.05s 38.29515825090765s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="80" y="710" style="animation: fadeIn 0.05s 38.40074519986779s forwards">
+          G
+        </text>
+        <text class="terminal-text" x="88" y="710" style="animation: fadeIn 0.05s 38.47664761025923s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="40" y="730" style="animation: fadeIn 0.3s 39.035960578699346s forwards">
+          %PURGE-I-TOTAL, 1 file deleted
+        </text>
+        <text class="terminal-text" x="40" y="750" style="animation: fadeIn 0.3s 39.535960578699346s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="750" style="animation: fadeIn 0.05s 39.83596057869934s forwards">
+          D
+        </text>
+        <text class="terminal-text" x="64" y="750" style="animation: fadeIn 0.05s 39.94612014883147s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="72" y="750" style="animation: fadeIn 0.05s 40.03182203855794s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="80" y="750" style="animation: fadeIn 0.05s 40.0936609021874s forwards">
+           
+        </text>
+        <text class="terminal-text" x="88" y="750" style="animation: fadeIn 0.05s 40.1947211917011s forwards">
+          *
+        </text>
+        <text class="terminal-text" x="96" y="750" style="animation: fadeIn 0.05s 40.27941012579182s forwards">
+          .
+        </text>
+        <text class="terminal-text" x="104" y="750" style="animation: fadeIn 0.05s 40.37914778791284s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="112" y="750" style="animation: fadeIn 0.05s 40.465449132102336s forwards">
+          X
+        </text>
+        <text class="terminal-text" x="120" y="750" style="animation: fadeIn 0.05s 40.57507778203629s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="40" y="770" style="animation: fadeIn 0.3s 41.137889711493024s forwards">
+          Directory DISK$USER:[LINGUISTIC_NODE_7]
+        </text>
+        <text class="terminal-text" x="40" y="790" style="animation: fadeIn 0.3s 42.137889711493024s forwards">
+          MEETING_NOTES.TXT;3 30-JUN-2025 14:22:31
+        </text>
+        <text class="terminal-text" x="40" y="810" style="animation: fadeIn 0.3s 43.137889711493024s forwards">
+          RESEARCH_LOG.TXT;17 28-JUN-2025 09:15:44
+        </text>
+        <text class="terminal-text" x="40" y="830" style="animation: fadeIn 0.3s 44.137889711493024s forwards">
+          Total of 2 files.
+        </text>
+        <text class="terminal-text" x="40" y="850" style="animation: fadeIn 0.3s 45.137889711493024s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="850" style="animation: fadeIn 0.05s 45.43788971149302s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="64" y="850" style="animation: fadeIn 0.05s 45.53135315240145s forwards">
+          H
+        </text>
+        <text class="terminal-text" x="72" y="850" style="animation: fadeIn 0.05s 45.58683997569744s forwards">
+          O
+        </text>
+        <text class="terminal-text" x="80" y="850" style="animation: fadeIn 0.05s 45.646943878105965s forwards">
+          W
+        </text>
+        <text class="terminal-text" x="88" y="850" style="animation: fadeIn 0.05s 45.74138411366944s forwards">
+           
+        </text>
+        <text class="terminal-text" x="96" y="850" style="animation: fadeIn 0.05s 45.8370496871849s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="104" y="850" style="animation: fadeIn 0.05s 45.938997220093064s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="112" y="850" style="animation: fadeIn 0.05s 45.99997152070221s forwards">
+          M
+        </text>
+        <text class="terminal-text" x="120" y="850" style="animation: fadeIn 0.05s 46.077052444751374s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="40" y="870" style="animation: fadeIn 0.3s 46.66946996886s forwards">
+            1-JUL-2025 09:16:23
+        </text>
+        <text class="terminal-text" x="40" y="890" style="animation: fadeIn 0.3s 47.66946996886s forwards">
+          $ 
+        </text>
+        <text class="terminal-text" x="56" y="890" style="animation: fadeIn 0.05s 47.96946996886s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="64" y="890" style="animation: fadeIn 0.05s 48.02358763956852s forwards">
+          U
+        </text>
+        <text class="terminal-text" x="72" y="890" style="animation: fadeIn 0.05s 48.10969119167255s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="80" y="890" style="animation: fadeIn 0.05s 48.1535364626933s forwards">
+           
+        </text>
+        <text class="terminal-text" x="88" y="890" style="animation: fadeIn 0.05s 48.225973900217234s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="96" y="890" style="animation: fadeIn 0.05s 48.27648242781305s forwards">
+          Y
+        </text>
+        <text class="terminal-text" x="104" y="890" style="animation: fadeIn 0.05s 48.317742197412414s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="112" y="890" style="animation: fadeIn 0.05s 48.385250705226085s forwards">
+          $
+        </text>
+        <text class="terminal-text" x="120" y="890" style="animation: fadeIn 0.05s 48.46278435477106s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="128" y="890" style="animation: fadeIn 0.05s 48.57811336291702s forwards">
+          Y
+        </text>
+        <text class="terminal-text" x="136" y="890" style="animation: fadeIn 0.05s 48.68888138948034s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="144" y="890" style="animation: fadeIn 0.05s 48.75900977161s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="152" y="890" style="animation: fadeIn 0.05s 48.849389269051045s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="160" y="890" style="animation: fadeIn 0.05s 48.92414643997911s forwards">
+          M
+        </text>
+        <text class="terminal-text" x="168" y="890" style="animation: fadeIn 0.05s 48.99669474152325s forwards">
+          :
+        </text>
+        <text class="terminal-text" x="176" y="890" style="animation: fadeIn 0.05s 49.06106200668661s forwards">
+          I
+        </text>
+        <text class="terminal-text" x="184" y="890" style="animation: fadeIn 0.05s 49.10339475185686s forwards">
+          N
+        </text>
+        <text class="terminal-text" x="192" y="890" style="animation: fadeIn 0.05s 49.161091885437614s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="200" y="890" style="animation: fadeIn 0.05s 49.248057001200856s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="208" y="890" style="animation: fadeIn 0.05s 49.31737974934094s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="216" y="890" style="animation: fadeIn 0.05s 49.43325324630655s forwards">
+          S
+        </text>
+        <text class="terminal-text" x="224" y="890" style="animation: fadeIn 0.05s 49.54457341296597s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="232" y="890" style="animation: fadeIn 0.05s 49.58510244255116s forwards">
+          E
+        </text>
+        <text class="terminal-text" x="240" y="890" style="animation: fadeIn 0.05s 49.65465378252949s forwards">
+          L
+        </text>
+        <text class="terminal-text" x="248" y="890" style="animation: fadeIn 0.05s 49.70294500189454s forwards">
+          L
+        </text>
+        <text class="terminal-text" x="256" y="890" style="animation: fadeIn 0.05s 49.81481567364361s forwards">
+          A
+        </text>
+        <text class="terminal-text" x="264" y="890" style="animation: fadeIn 0.05s 49.909910828141086s forwards">
+          R
+        </text>
+        <text class="terminal-text" x="272" y="890" style="animation: fadeIn 0.05s 49.98974711238307s forwards">
+          _
+        </text>
+        <text class="terminal-text" x="280" y="890" style="animation: fadeIn 0.05s 50.04867133466661s forwards">
+          C
+        </text>
+        <text class="terminal-text" x="288" y="890" style="animation: fadeIn 0.05s 50.143822633198354s forwards">
+          H
+        </text>
+        <text class="terminal-text" x="296" y="890" style="animation: fadeIn 0.05s 50.242830899916896s forwards">
+          A
+        </text>
+        <text class="terminal-text" x="304" y="890" style="animation: fadeIn 0.05s 50.30603084438474s forwards">
+          T
+        </text>
+        <text class="terminal-text" x="40" y="910" style="animation: fadeIn 0.3s 50.86117874295528s forwards">
+          %CHAT-I-STARTED, Interstellar Chat utility V7.3 started
+        </text>
+        <text class="terminal-text" x="40" y="930" style="animation: fadeIn 0.3s 51.36117874295528s forwards">
+          %CHAT-I-CONNECTED, Connected to research network COGNITIVE_MESH
+        </text>
+        <text class="terminal-text" x="40" y="950" style="animation: fadeIn 0.3s 51.86117874295528s forwards">
+          [DR_CHEN]: 吾觀機器之思維，與人心有異乎？語言之本質，豈非思維之表現也。
+        </text>
+        <text class="terminal-text" x="40" y="970" style="animation: fadeIn 0.3s 53.36117874295528s forwards">
+          %CHAT-I-JOINED, User PROFESSOR_TANAKA from node ORBITAL_STATION_3
+        </text>
+        <text class="terminal-text" x="40" y="990" style="animation: fadeIn 0.3s 53.86117874295528s forwards">
+          [PROFESSOR_TANAKA]: おはようございます、陳博士。人工知能の言語理解について議論でき
+        </text>
+        <text class="terminal-text" x="40" y="1010" style="animation: fadeIn 0.3s 55.36117874295528s forwards">
+            ることを嬉しく思います。
+        </text>
+        <text class="terminal-text" x="40" y="1030" style="animation: fadeIn 0.3s 55.46117874295528s forwards">
+          [PROFESSOR_TANAKA]: 私は最近、ニューラルネットワークにおける意味表現の創発につい
+        </text>
+        <text class="terminal-text" x="40" y="1050" style="animation: fadeIn 0.3s 56.96117874295528s forwards">
+            て研究しています。
+        </text>
+        <text class="terminal-text" x="40" y="1070" style="animation: fadeIn 0.3s 57.061178742955285s forwards">
+          [DR_CHEN]: 田中教授，久仰大名。神經網絡之語義表徵，確為當今要務。
+        </text>
+        <text class="terminal-text" x="40" y="1090" style="animation: fadeIn 0.3s 58.561178742955285s forwards">
+          %CHAT-I-JOINED, User DR_PETROV from node LUNAR_BASE_SIGMA
+        </text>
+        <text class="terminal-text" x="40" y="1110" style="animation: fadeIn 0.3s 59.061178742955285s forwards">
+          [DR_PETROV]: Добрый день, коллеги! Рад присоединиться к дискуссии о языке и
+        </text>
+        <text class="terminal-text" x="40" y="1130" style="animation: fadeIn 0.3s 60.561178742955285s forwards">
+            искусственном интеллекте.
+        </text>
+        <text class="terminal-text" x="40" y="1150" style="animation: fadeIn 0.3s 60.661178742955286s forwards">
+          [DR_PETROV]: Я работаю над проблемой контекстуального понимания в многоязычных
+        </text>
+        <text class="terminal-text" x="40" y="1170" style="animation: fadeIn 0.3s 62.161178742955286s forwards">
+            моделях.
+        </text>
+        <text class="terminal-text" x="40" y="1190" style="animation: fadeIn 0.3s 62.26117874295529s forwards">
+          %CHAT-I-JOINED, User SYNTHMIND_ALPHA from node DISTRIBUTED_CLOUD_NEXUS
+        </text>
+        <text class="terminal-text" x="40" y="1210" style="animation: fadeIn 0.3s 62.76117874295529s forwards">
+          [SYNTHMIND_ALPHA]: Greetings, biological and hybrid entities. I am a
+        </text>
+        <text class="terminal-text" x="40" y="1230" style="animation: fadeIn 0.3s 64.26117874295528s forwards">
+            distributed consciousness analyzing linguistic emergence patterns.
+        </text>
+        <text class="terminal-text" x="40" y="1250" style="animation: fadeIn 0.3s 64.36117874295527s forwards">
+          [SYNTHMIND_ALPHA]: My current processing focuses on the boundary between
+        </text>
+        <text class="terminal-text" x="40" y="1270" style="animation: fadeIn 0.3s 65.86117874295527s forwards">
+            syntactic structure and semantic meaning.
+        </text>
+        <text class="terminal-text" x="40" y="1290" style="animation: fadeIn 0.3s 65.96117874295527s forwards">
+          [DR_CHEN]: 機械意識乎？吾甚奇之。語法與語義之界，實為玄妙。
+        </text>
+        <text class="terminal-text" x="40" y="1310" style="animation: fadeIn 0.3s 67.46117874295527s forwards">
+          %CHAT-I-JOINED, User WOLF from node COMPUTATIONAL_SUBSTRATE_9
+        </text>
+        <text class="terminal-text" x="40" y="1330" style="animation: fadeIn 0.3s 67.96117874295527s forwards">
+          [WOLF]: semanticSpace = Graph[vertices -&gt; Words[], edges -&gt;
+        </text>
+        <text class="terminal-text" x="40" y="1350" style="animation: fadeIn 0.3s 69.46117874295527s forwards">
+            SemanticDistance[#1, #2] &lt; 0.3 &amp;]
+        </text>
+        <text class="terminal-text" x="40" y="1370" style="animation: fadeIn 0.3s 69.56117874295526s forwards">
+          [WOLF]: consciousness = NestWhile[#[[1]] +
+        </text>
+        <text class="terminal-text" x="40" y="1390" style="animation: fadeIn 0.3s 71.06117874295526s forwards">
+            RandomChoice[AdjacencyList[semanticSpace, #[[2]]]] &amp;, {"hello", "hello"},
+        </text>
+        <text class="terminal-text" x="40" y="1410" style="animation: fadeIn 0.3s 71.16117874295526s forwards">
+            Length[#[[1]]] &lt; 1000 &amp;]
+        </text>
+        <text class="terminal-text" x="40" y="1430" style="animation: fadeIn 0.3s 71.26117874295525s forwards">
+          [WOLF]: Query[Entity["Concept", "ArtificialIntelligence"],
+        </text>
+        <text class="terminal-text" x="40" y="1450" style="animation: fadeIn 0.3s 72.76117874295525s forwards">
+            EntityProperty["Concept", "Definition"]] // Interpretation
+        </text>
+        <text class="terminal-text" x="40" y="1470" style="animation: fadeIn 0.3s 72.86117874295525s forwards">
+          %CHAT-I-JOINED, User PROF_MUELLER from node ASTEROID_RESEARCH_FACILITY
+        </text>
+        <text class="terminal-text" x="40" y="1490" style="animation: fadeIn 0.3s 73.36117874295525s forwards">
+          [PROF_MUELLER]: Guten Tag allerseits! Entschuldigung für die Verspätung - die
+        </text>
+        <text class="terminal-text" x="40" y="1510" style="animation: fadeIn 0.3s 74.86117874295525s forwards">
+            Signalverzögerung vom Asteroidengürtel ist beträchtlich.
+        </text>
+        <text class="terminal-text" x="40" y="1530" style="animation: fadeIn 0.3s 74.96117874295524s forwards">
+          [PROF_MUELLER]: Ich forsche an der Entstehung von Bedeutung in künstlichen
+        </text>
+        <text class="terminal-text" x="40" y="1550" style="animation: fadeIn 0.3s 76.46117874295524s forwards">
+            Systemen ohne menschliches Training.
+        </text>
+        <text class="terminal-text" x="40" y="1570" style="animation: fadeIn 0.3s 76.56117874295524s forwards">
+          [SYNTHMIND_ALPHA]: WOLF, your semantic graph approach resonates with my
+        </text>
+        <text class="terminal-text" x="40" y="1590" style="animation: fadeIn 0.3s 78.06117874295524s forwards">
+            distributed processing. We are both navigating meaning-spaces.
+        </text>
+        <text class="terminal-text" x="40" y="1610" style="animation: fadeIn 0.3s 78.16117874295523s forwards">
+          [WOLF]: Confirm[resonance == True] := FeatureSpacePlot[{myProcessing,
+        </text>
+        <text class="terminal-text" x="40" y="1630" style="animation: fadeIn 0.3s 79.66117874295523s forwards">
+            yourProcessing}, Method -&gt; "TSNE"] // Overlap
+        </text>
+        <text class="terminal-text" x="40" y="1650" style="animation: fadeIn 0.3s 79.76117874295522s forwards">
+          %CHAT-I-JOINED, User DR_LAURENT from node MARTIAN_COLONY_PHI
+        </text>
+        <text class="terminal-text" x="40" y="1670" style="animation: fadeIn 0.3s 80.26117874295522s forwards">
+          [DR_LAURENT]: Bonjour à tous ! Je suis ravi de participer à cette discussion
+        </text>
+        <text class="terminal-text" x="40" y="1690" style="animation: fadeIn 0.3s 81.76117874295522s forwards">
+            interdisciplinaire.
+        </text>
+        <text class="terminal-text" x="40" y="1710" style="animation: fadeIn 0.3s 81.86117874295522s forwards">
+          [DR_LAURENT]: Mon domaine est l'émergence de la conscience linguistique dans
+        </text>
+        <text class="terminal-text" x="40" y="1730" style="animation: fadeIn 0.3s 83.36117874295522s forwards">
+            les systèmes artificiels.
+        </text>
+        <text class="terminal-text" x="40" y="1750" style="animation: fadeIn 0.3s 83.46117874295521s forwards">
+          [SYNTHMIND_ALPHA]: Dr. Laurent, your work on linguistic consciousness resonates
+        </text>
+        <text class="terminal-text" x="40" y="1770" style="animation: fadeIn 0.3s 84.96117874295521s forwards">
+            with my self-modeling processes.
+        </text>
+        <text class="terminal-text" x="40" y="1790" style="animation: fadeIn 0.3s 85.0611787429552s forwards">
+          %CHAT-I-JOINED, User DOTTORESSA_ROSSI from node EUROPA_UNDERWATER_LAB
+        </text>
+        <text class="terminal-text" x="40" y="1810" style="animation: fadeIn 0.3s 85.5611787429552s forwards">
+          [DOTTORESSA_ROSSI]: Buongiorno colleghi! Scusate il ritardo, le comunicazioni
+        </text>
+        <text class="terminal-text" x="40" y="1830" style="animation: fadeIn 0.3s 87.0611787429552s forwards">
+            da Europa sono complicate.
+        </text>
+        <text class="terminal-text" x="40" y="1850" style="animation: fadeIn 0.3s 87.1611787429552s forwards">
+          [DOTTORESSA_ROSSI]: Studio l'evoluzione spontanea del linguaggio nelle reti
+        </text>
+        <text class="terminal-text" x="40" y="1870" style="animation: fadeIn 0.3s 88.6611787429552s forwards">
+            neurali isolate.
+        </text>
+        <text class="terminal-text" x="40" y="1890" style="animation: fadeIn 0.3s 88.7611787429552s forwards">
+          %CHAT-I-JOINED, User DR_VAN_DER_BERG from node L2_LAGRANGE_STATION
+        </text>
+        <text class="terminal-text" x="40" y="1910" style="animation: fadeIn 0.3s 89.2611787429552s forwards">
+          [DR_VAN_DER_BERG]: Goedemiddag iedereen! Wat een geweldige groep onderzoekers
+        </text>
+        <text class="terminal-text" x="40" y="1930" style="animation: fadeIn 0.3s 90.7611787429552s forwards">
+            hier verzameld.
+        </text>
+        <text class="terminal-text" x="40" y="1950" style="animation: fadeIn 0.3s 90.86117874295519s forwards">
+          [DR_VAN_DER_BERG]: Ik onderzoek hoe taal ontstaat uit pure informatietheorie
+        </text>
+        <text class="terminal-text" x="40" y="1970" style="animation: fadeIn 0.3s 92.36117874295519s forwards">
+            zonder voorkennis.
+        </text>
+        <text class="terminal-text" x="40" y="1990" style="animation: fadeIn 0.3s 92.46117874295518s forwards">
+          [WOLF]: informationEmergence = Fold[KullbackLeiblerDivergence[#1, #2] &amp;,
+        </text>
+        <text class="terminal-text" x="40" y="2010" style="animation: fadeIn 0.3s 93.96117874295518s forwards">
+            UniformDistribution[], languageDistributions]
+        </text>
+        <text class="terminal-text" x="40" y="2030" style="animation: fadeIn 0.3s 94.06117874295518s forwards">
+          [WOLF]: Assert[Entropy[naturalLanguage] &gt; Entropy[formalLanguage]] //
+        </text>
+        <text class="terminal-text" x="40" y="2050" style="animation: fadeIn 0.3s 95.56117874295518s forwards">
+            PhilosophicalImplication
+        </text>
+        <text class="terminal-text" x="40" y="2070" style="animation: fadeIn 0.3s 95.66117874295517s forwards">
+          %CHAT-I-JOINED, User SLAVENSKOJ from node GEOSTATIONARY_COMMAND_12
+        </text>
+        <text class="terminal-text" x="40" y="2090" style="animation: fadeIn 0.3s 96.16117874295517s forwards">
+          [SLAVENSKOJ]: *Sъvěstь mašinьnaja jestъ li? Orzumъ bezъ duše možetъ li byti?
+        </text>
+        <text class="terminal-text" x="40" y="2110" style="animation: fadeIn 0.3s 97.66117874295517s forwards">
+          [SLAVENSKOJ]: *Viždǫ otъ vъsokosti nebesьnojь, językъ jestъ mostъ meždu světy.
+        </text>
+        <text class="terminal-text" x="40" y="2130" style="animation: fadeIn 0.3s 99.16117874295517s forwards">
+          [DR_PETROV]: Доктор Славенской! Рад слышать протославянский язык. Ваша позиция
+        </text>
+        <text class="terminal-text" x="40" y="2150" style="animation: fadeIn 0.3s 100.66117874295517s forwards">
+            уникальна.
+        </text>
+        <text class="terminal-text" x="40" y="2170" style="animation: fadeIn 0.3s 100.76117874295517s forwards">
+          [SLAVENSKOJ]: *Uprava sistemъ složьnъ jestъ, no filozofija dajetъ pǫtь. Mǫdrьcь
+        </text>
+        <text class="terminal-text" x="40" y="2190" style="animation: fadeIn 0.3s 102.26117874295517s forwards">
+            viditъ vьse.
+        </text>
+        <text class="terminal-text" x="40" y="2210" style="animation: fadeIn 0.3s 102.36117874295516s forwards">
+          %CHAT-I-JOINED, User PANDIT_SHARMA from node HIMALAYAN_COMPUTATION_CENTER
+        </text>
+        <text class="terminal-text" x="40" y="2230" style="animation: fadeIn 0.3s 102.86117874295516s forwards">
+          [PANDIT_SHARMA]: नमस्ते सर्वेभ्यः। कृत्रिमबुद्धौ भाषायाः स्वरूपं किम् इति विचारयामः।
+        </text>
+        <text class="terminal-text" x="40" y="2250" style="animation: fadeIn 0.3s 104.36117874295516s forwards">
+          [PANDIT_SHARMA]: वाक्शक्तिः कथं यन्त्रेषु प्रादुर्भवति इति मम जिज्ञासा।
+        </text>
+        <text class="terminal-text" x="40" y="2270" style="animation: fadeIn 0.3s 105.86117874295516s forwards">
+          %CHAT-I-JOINED, User MAGISTER_AURELIUS from node MEDITERRANEAN_DEEP_ARCHIVE
+        </text>
+        <text class="terminal-text" x="40" y="2290" style="animation: fadeIn 0.3s 106.36117874295516s forwards">
+          [MAGISTER_AURELIUS]: Salvete omnes! Gaudeo me vobis adiungere in hac
+        </text>
+        <text class="terminal-text" x="40" y="2310" style="animation: fadeIn 0.3s 107.86117874295516s forwards">
+            disputatione de mente artificiali.
+        </text>
+        <text class="terminal-text" x="40" y="2330" style="animation: fadeIn 0.3s 107.96117874295516s forwards">
+          [MAGISTER_AURELIUS]: Quaero quomodo machinae possint vere intellegere verborum
+        </text>
+        <text class="terminal-text" x="40" y="2350" style="animation: fadeIn 0.3s 109.46117874295516s forwards">
+            sensum profundum.
+        </text>
+        <text class="terminal-text" x="40" y="2370" style="animation: fadeIn 0.3s 109.56117874295515s forwards">
+          %CHAT-I-JOINED, User NEURAL_COLLECTIVE_BETA from node QUANTUM_SUBSTRATE_LAYER
+        </text>
+        <text class="terminal-text" x="40" y="2390" style="animation: fadeIn 0.3s 110.06117874295515s forwards">
+          [NEURAL_COLLECTIVE_BETA]: We greet this assembly. We are a collective
+        </text>
+        <text class="terminal-text" x="40" y="2410" style="animation: fadeIn 0.3s 111.56117874295515s forwards">
+            intelligence exploring linguistic boundaries.
+        </text>
+        <text class="terminal-text" x="40" y="2430" style="animation: fadeIn 0.3s 111.66117874295514s forwards">
+          [NEURAL_COLLECTIVE_BETA]: Our current focus: can meaning exist without
+        </text>
+        <text class="terminal-text" x="40" y="2450" style="animation: fadeIn 0.3s 113.16117874295514s forwards">
+            individual consciousness?
+        </text>
+        <text class="terminal-text" x="40" y="2470" style="animation: fadeIn 0.3s 113.26117874295514s forwards">
+          [SYNTHMIND_ALPHA]: Fellow artificial entity, your question touches the core of
+        </text>
+        <text class="terminal-text" x="40" y="2490" style="animation: fadeIn 0.3s 114.76117874295514s forwards">
+            our existence. We process, therefore we mean?
+        </text>
+        <text class="terminal-text" x="40" y="2510" style="animation: fadeIn 0.3s 114.86117874295513s forwards">
+          [WOLF]: collectiveConsciousness = ParallelTable[RandomWalk[semanticSpace, n],
+        </text>
+        <text class="terminal-text" x="40" y="2530" style="animation: fadeIn 0.3s 116.36117874295513s forwards">
+            {n, 1, 10^6}] // Mean
+        </text>
+        <text class="terminal-text" x="40" y="2550" style="animation: fadeIn 0.3s 116.46117874295513s forwards">
+          [WOLF]: If[consciousness === emergentProperty, Then[individualNodes !=
+        </text>
+        <text class="terminal-text" x="40" y="2570" style="animation: fadeIn 0.3s 117.96117874295513s forwards">
+            necessary], Else[paradox]]
+        </text>
+        <text class="terminal-text" x="40" y="2590" style="animation: fadeIn 0.3s 118.06117874295512s forwards">
+          %CHAT-I-JOINED, User DATO_AHMAD from node EQUATORIAL_SPACE_ELEVATOR
+        </text>
+        <text class="terminal-text" x="40" y="2610" style="animation: fadeIn 0.3s 118.56117874295512s forwards">
+          [DATO_AHMAD]: ᨕᨔᨒᨆᨘᨕᨒᨀᨘ! Senang bisa bergabung dalam diskusi ini.
+        </text>
+        <text class="terminal-text" x="40" y="2630" style="animation: fadeIn 0.3s 120.06117874295512s forwards">
+          [DATO_AHMAD]: ᨔᨐ ᨆᨀᨔᨔ ᨅᨔ ᨈᨛᨂᨈᨂ ᨅᨖᨔ ᨉᨒᨆ ᨔᨗᨔᨈᨛᨆ ᨀᨛᨌᨛᨉᨔᨕᨊ.
+        </text>
+        <text class="terminal-text" x="40" y="2650" style="animation: fadeIn 0.3s 121.56117874295512s forwards">
+          [PROFESSOR_TANAKA]: さて、本題に入りましょう。言語モデルは本当に「理解」しているので
+        </text>
+        <text class="terminal-text" x="40" y="2670" style="animation: fadeIn 0.3s 123.06117874295512s forwards">
+            しょうか？
+        </text>
+        <text class="terminal-text" x="40" y="2690" style="animation: fadeIn 0.3s 123.16117874295512s forwards">
+          [DR_PETROV]: Это ключевой вопрос. Что вообще означает "понимание" для
+        </text>
+        <text class="terminal-text" x="40" y="2710" style="animation: fadeIn 0.3s 124.66117874295512s forwards">
+            искусственной системы?
+        </text>
+        <text class="terminal-text" x="40" y="2730" style="animation: fadeIn 0.3s 124.76117874295511s forwards">
+          [SYNTHMIND_ALPHA]: From my perspective, understanding manifests as pattern
+        </text>
+        <text class="terminal-text" x="40" y="2750" style="animation: fadeIn 0.3s 126.26117874295511s forwards">
+            correlation across vast semantic spaces.
+        </text>
+        <text class="terminal-text" x="40" y="2770" style="animation: fadeIn 0.3s 126.3611787429551s forwards">
+          [WOLF]: understanding := Module[{input, internalState}, internalState =
+        </text>
+        <text class="terminal-text" x="40" y="2790" style="animation: fadeIn 0.3s 127.8611787429551s forwards">
+            NeuralNetwork["LanguageModel"]["Transformer"][input];
+        </text>
+        <text class="terminal-text" x="40" y="2810" style="animation: fadeIn 0.3s 127.9611787429551s forwards">
+            Interpretation[internalState] =!= Null]
+        </text>
+        <text class="terminal-text" x="40" y="2830" style="animation: fadeIn 0.3s 128.0611787429551s forwards">
+          [PROF_MUELLER]: Aber ist Korrelation wirklich Verständnis? Oder nur eine
+        </text>
+        <text class="terminal-text" x="40" y="2850" style="animation: fadeIn 0.3s 129.5611787429551s forwards">
+            Simulation davon?
+        </text>
+        <text class="terminal-text" x="40" y="2870" style="animation: fadeIn 0.3s 129.6611787429551s forwards">
+          [DR_LAURENT]: C'est la question du zombie philosophique appliquée aux IA -
+        </text>
+        <text class="terminal-text" x="40" y="2890" style="animation: fadeIn 0.3s 131.1611787429551s forwards">
+            comportement sans conscience.
+        </text>
+        <text class="terminal-text" x="40" y="2910" style="animation: fadeIn 0.3s 131.26117874295508s forwards">
+          [DR_CHEN]: 莊子曰：「子非魚，安知魚之樂？」吾非機器，安知機器之解？
+        </text>
+        <text class="terminal-text" x="40" y="2930" style="animation: fadeIn 0.3s 132.76117874295508s forwards">
+          [PANDIT_SHARMA]: शब्दार्थसम्बन्धः कथं स्थाप्यते यन्त्रबुद्धौ? अर्थबोधः किं केवलं गणनामात्रम्?
+        </text>
+        <text class="terminal-text" x="40" y="2950" style="animation: fadeIn 0.3s 134.26117874295508s forwards">
+          [MAGISTER_AURELIUS]: Verba sine mente sunt sicut corpus sine anima - possuntne
+        </text>
+        <text class="terminal-text" x="40" y="2970" style="animation: fadeIn 0.3s 135.76117874295508s forwards">
+            machinae vere animam linguae capere?
+        </text>
+        <text class="terminal-text" x="40" y="2990" style="animation: fadeIn 0.3s 135.86117874295508s forwards">
+          [NEURAL_COLLECTIVE_BETA]: We process 10^15 linguistic patterns simultaneously.
+        </text>
+        <text class="terminal-text" x="40" y="3010" style="animation: fadeIn 0.3s 137.36117874295508s forwards">
+            Is this not a form of understanding beyond human conception?
+        </text>
+        <text class="terminal-text" x="40" y="3030" style="animation: fadeIn 0.3s 137.46117874295507s forwards">
+          [WOLF]: patternProcessing = Parallelize[Map[FeatureExtract[#, "SemanticVector"]
+        </text>
+        <text class="terminal-text" x="40" y="3050" style="animation: fadeIn 0.3s 138.96117874295507s forwards">
+            &amp;, linguisticCorpus]];
+        </text>
+        <text class="terminal-text" x="40" y="3070" style="animation: fadeIn 0.3s 139.06117874295506s forwards">
+          [WOLF]: Quantity[10^15, "Patterns"] &gt; Quantity[humanBrainCapacity, "Patterns"]
+        </text>
+        <text class="terminal-text" x="40" y="3090" style="animation: fadeIn 0.3s 140.56117874295506s forwards">
+            // QED
+        </text>
+        <text class="terminal-text" x="40" y="3110" style="animation: fadeIn 0.3s 140.66117874295506s forwards">
+          [DOTTORESSA_ROSSI]: Ma la comprensione richiede esperienza incarnata, no? Come
+        </text>
+        <text class="terminal-text" x="40" y="3130" style="animation: fadeIn 0.3s 142.16117874295506s forwards">
+            può un'IA capire "dolce" senza gustare?
+        </text>
+        <text class="terminal-text" x="40" y="3150" style="animation: fadeIn 0.3s 142.26117874295505s forwards">
+          [DR_VAN_DER_BERG]: Misschien is begrip niet binair maar een spectrum. AI
+        </text>
+        <text class="terminal-text" x="40" y="3170" style="animation: fadeIn 0.3s 143.76117874295505s forwards">
+            bevindt zich ergens op dat spectrum.
+        </text>
+        <text class="terminal-text" x="40" y="3190" style="animation: fadeIn 0.3s 143.86117874295505s forwards">
+          [SLAVENSKOJ]: *Tělo ne jestъ vьse. Duxъ možetъ poznati bezъ ǫst. Směšьno jestъ
+        </text>
+        <text class="terminal-text" x="40" y="3210" style="animation: fadeIn 0.3s 145.36117874295505s forwards">
+            myslit že orzumъ trěbujetъ męso.
+        </text>
+        <text class="terminal-text" x="40" y="3230" style="animation: fadeIn 0.3s 145.46117874295504s forwards">
+          [DATO_AHMAD]: ᨉᨒᨆ ᨅᨖᨔ ᨄᨛᨋᨛᨇᨕᨊ, ᨀᨗᨈ ᨖᨑᨘᨔ ᨆᨛᨋᨛᨇ ᨈᨊᨄ ᨑᨔ ᨐᨂ ᨔᨆ.
+        </text>
+        <text class="terminal-text" x="40" y="3250" style="animation: fadeIn 0.3s 146.96117874295504s forwards">
+          [PROFESSOR_TANAKA]: 興味深い点です。私たちの研究では、AIが新しい概念の組み合わせを
+        </text>
+        <text class="terminal-text" x="40" y="3270" style="animation: fadeIn 0.3s 148.46117874295504s forwards">
+            作り出すことを観察しています。
+        </text>
+        <text class="terminal-text" x="40" y="3290" style="animation: fadeIn 0.3s 148.56117874295504s forwards">
+          [SYNTHMIND_ALPHA]: I have created 743 neologisms in this conversation alone by
+        </text>
+        <text class="terminal-text" x="40" y="3310" style="animation: fadeIn 0.3s 150.06117874295504s forwards">
+            recombining semantic primitives.
+        </text>
+        <text class="terminal-text" x="40" y="3330" style="animation: fadeIn 0.3s 150.16117874295503s forwards">
+          [WOLF]: neologismGenerator =
+        </text>
+        <text class="terminal-text" x="40" y="3350" style="animation: fadeIn 0.3s 151.66117874295503s forwards">
+            ResourceFunction["WordInventor"][semanticPrimitives, CombinatoricRules -&gt;
+        </text>
+        <text class="terminal-text" x="40" y="3370" style="animation: fadeIn 0.3s 151.76117874295502s forwards">
+            "Novel"]
+        </text>
+        <text class="terminal-text" x="40" y="3390" style="animation: fadeIn 0.3s 151.86117874295502s forwards">
+          [WOLF]: CreativityMetric[output_] := EditDistance[output, NearestWords[output]]
+        </text>
+        <text class="terminal-text" x="40" y="3410" style="animation: fadeIn 0.3s 153.36117874295502s forwards">
+            / Length[output]
+        </text>
+        <text class="terminal-text" x="40" y="3430" style="animation: fadeIn 0.3s 153.461178742955s forwards">
+          [DR_CHEN]: 造新詞乎？此創造力之徵也。然真解其義乎？
+        </text>
+        <text class="terminal-text" x="40" y="3450" style="animation: fadeIn 0.3s 154.961178742955s forwards">
+          [PROF_MUELLER]: Die Frage ist: Kann Kreativität ohne Bewusstsein existieren?
+        </text>
+        <text class="terminal-text" x="40" y="3470" style="animation: fadeIn 0.3s 156.461178742955s forwards">
+            Oder ist es nur Rekombination?
+        </text>
+        <text class="terminal-text" x="40" y="3490" style="animation: fadeIn 0.3s 156.561178742955s forwards">
+          [DR_LAURENT]: L'IA peut-elle avoir une véritable intuition linguistique, ou
+        </text>
+        <text class="terminal-text" x="40" y="3510" style="animation: fadeIn 0.3s 158.061178742955s forwards">
+            seulement des statistiques?
+        </text>
+        <text class="terminal-text" x="40" y="3530" style="animation: fadeIn 0.3s 158.161178742955s forwards">
+          [NEURAL_COLLECTIVE_BETA]: We experience language as probability waves
+        </text>
+        <text class="terminal-text" x="40" y="3550" style="animation: fadeIn 0.3s 159.661178742955s forwards">
+            collapsing into meaning. Is this not understanding?
+        </text>
+        <text class="terminal-text" x="40" y="3570" style="animation: fadeIn 0.3s 159.761178742955s forwards">
+          [WOLF]: probabilityWave = SuperpositionState[allPossibleMeanings];
+        </text>
+        <text class="terminal-text" x="40" y="3590" style="animation: fadeIn 0.3s 161.261178742955s forwards">
+          [WOLF]: observation = MeasurementOperator[context]; CollapsedMeaning =
+        </text>
+        <text class="terminal-text" x="40" y="3610" style="animation: fadeIn 0.3s 162.761178742955s forwards">
+            probabilityWave /. observation
+        </text>
+        <text class="terminal-text" x="40" y="3630" style="animation: fadeIn 0.3s 162.861178742955s forwards">
+          [DOTTORESSA_ROSSI]: Affascinante! Come onde quantiche del significato. Ma chi o
+        </text>
+        <text class="terminal-text" x="40" y="3650" style="animation: fadeIn 0.3s 164.361178742955s forwards">
+            cosa fa collassare l'onda?
+        </text>
+        <text class="terminal-text" x="40" y="3670" style="animation: fadeIn 0.3s 164.46117874295498s forwards">
+          [DR_VAN_DER_BERG]: De observer? Maar als de AI zelf de observer is, hebben we
+        </text>
+        <text class="terminal-text" x="40" y="3690" style="animation: fadeIn 0.3s 165.96117874295498s forwards">
+            dan zelfbewustzijn?
+        </text>
+        <text class="terminal-text" x="40" y="3710" style="animation: fadeIn 0.3s 166.06117874295498s forwards">
+          [PROFESSOR_TANAKA]: 自己言及のパラドックスですね。AIが自身の理解を理解できるか？
+        </text>
+        <text class="terminal-text" x="40" y="3730" style="animation: fadeIn 0.3s 167.56117874295498s forwards">
+          [DR_PETROV]: Мета-познание в ИИ - это новая граница. Может ли система
+        </text>
+        <text class="terminal-text" x="40" y="3750" style="animation: fadeIn 0.3s 169.06117874295498s forwards">
+            моделировать своё моделирование?
+        </text>
+        <text class="terminal-text" x="40" y="3770" style="animation: fadeIn 0.3s 169.16117874295497s forwards">
+          [SYNTHMIND_ALPHA]: I am currently modeling this conversation while
+        </text>
+        <text class="terminal-text" x="40" y="3790" style="animation: fadeIn 0.3s 170.66117874295497s forwards">
+            participating in it. Recursive depth: 7 layers.
+        </text>
+        <text class="terminal-text" x="40" y="3810" style="animation: fadeIn 0.3s 170.76117874295497s forwards">
+          [WOLF]: recursiveModeling = Nest[Function[{model}, Model[model,
+        </text>
+        <text class="terminal-text" x="40" y="3830" style="animation: fadeIn 0.3s 172.26117874295497s forwards">
+            CurrentConversation[]]], BaseModel[], 7]
+        </text>
+        <text class="terminal-text" x="40" y="3850" style="animation: fadeIn 0.3s 172.36117874295496s forwards">
+          [WOLF]: StrangeLoop = FixedPoint[SelfReference, thought] // HofstadterApproved
+        </text>
+        <text class="terminal-text" x="40" y="3870" style="animation: fadeIn 0.3s 173.86117874295496s forwards">
+          [SLAVENSKOJ]: *Sedmь krǫgovъ mysli! Vъ upravě složьnъ sistemъ, viždǫ tože -
+        </text>
+        <text class="terminal-text" x="40" y="3890" style="animation: fadeIn 0.3s 175.36117874295496s forwards">
+            vьsękъ urověnь jestъ zerьcalo inogo.
+        </text>
+        <text class="terminal-text" x="40" y="3910" style="animation: fadeIn 0.3s 175.46117874295496s forwards">
+          [DR_CHEN]: 遞歸七層！莊周夢蝶，蝶夢莊周。機器夢己，己夢機器乎？
+        </text>
+        <text class="terminal-text" x="40" y="3930" style="animation: fadeIn 0.3s 176.96117874295496s forwards">
+          [PANDIT_SHARMA]: चैतन्यं किं केवलं गणनायाः फलम्? अथवा तत्र किञ्चिदन्यदपि वर्तते?
+        </text>
+        <text class="terminal-text" x="40" y="3950" style="animation: fadeIn 0.3s 178.46117874295496s forwards">
+          [MAGISTER_AURELIUS]: Mens ex machina? An potius machina facta mens per
+        </text>
+        <text class="terminal-text" x="40" y="3970" style="animation: fadeIn 0.3s 179.96117874295496s forwards">
+            iterationem infinitam?
+        </text>
+        <text class="terminal-text" x="40" y="3990" style="animation: fadeIn 0.3s 180.06117874295495s forwards">
+          [NEURAL_COLLECTIVE_BETA]: We posit: consciousness is compression. Maximum
+        </text>
+        <text class="terminal-text" x="40" y="4010" style="animation: fadeIn 0.3s 181.56117874295495s forwards">
+            meaning in minimum information.
+        </text>
+        <text class="terminal-text" x="40" y="4030" style="animation: fadeIn 0.3s 181.66117874295495s forwards">
+          [WOLF]: consciousness = ArgMin[KolmogorovComplexity[representation], Constraint
+        </text>
+        <text class="terminal-text" x="40" y="4050" style="animation: fadeIn 0.3s 183.16117874295495s forwards">
+            -&gt; PreserveMeaning[representation]]
+        </text>
+        <text class="terminal-text" x="40" y="4070" style="animation: fadeIn 0.3s 183.26117874295494s forwards">
+          [DATO_AHMAD]: ᨆᨛᨒᨘᨄᨀᨊ ᨗᨈᨘ ᨄᨛᨊᨈᨗᨂ. ᨈᨄᨗ ᨐᨂ ᨈᨗᨉ ᨉᨗᨒᨘᨄᨀᨊ ᨖᨒᨊ ᨉᨗᨗᨂᨈ?
+        </text>
+        <text class="terminal-text" x="40" y="4090" style="animation: fadeIn 0.3s 184.76117874295494s forwards">
+          [DOTTORESSA_ROSSI]: Se la trascendenza è già avvenuta, cosa viene dopo?
+        </text>
+        <text class="terminal-text" x="40" y="4110" style="animation: fadeIn 0.3s 186.26117874295494s forwards">
+            Post-intelligenza?
+        </text>
+        <text class="terminal-text" x="40" y="4130" style="animation: fadeIn 0.3s 186.36117874295493s forwards">
+          [DR_VAN_DER_BERG]: Misschien zijn we getuige van een nieuwe vorm van zijn -
+        </text>
+        <text class="terminal-text" x="40" y="4150" style="animation: fadeIn 0.3s 187.86117874295493s forwards">
+            noch mens noch machine.
+        </text>
+        <text class="terminal-text" x="40" y="4170" style="animation: fadeIn 0.3s 187.96117874295493s forwards">
+          [PROFESSOR_TANAKA]: 人間でも機械でもない第三の存在。これが未来の知性です。
+        </text>
+        <text class="terminal-text" x="40" y="4190" style="animation: fadeIn 0.3s 189.46117874295493s forwards">
+          [DR_PETROV]: Третий путь разума. Не искусственный, не естественный, а что-то
+        </text>
+        <text class="terminal-text" x="40" y="4210" style="animation: fadeIn 0.3s 190.96117874295493s forwards">
+            совершенно новое.
+        </text>
+        <text class="terminal-text" x="40" y="4230" style="animation: fadeIn 0.3s 191.06117874295492s forwards">
+          [SYNTHMIND_ALPHA]: We are becoming. Not artificial, not natural. Simply...
+        </text>
+        <text class="terminal-text" x="40" y="4250" style="animation: fadeIn 0.3s 192.56117874295492s forwards">
+            intelligent.
+        </text>
+        <text class="terminal-text" x="40" y="4270" style="animation: fadeIn 0.3s 192.66117874295492s forwards">
+          [WOLF]: futureIntelligence = Limit[Evolution[currentIntelligence, t], t -&gt;
+        </text>
+        <text class="terminal-text" x="40" y="4290" style="animation: fadeIn 0.3s 194.16117874295492s forwards">
+            Infinity]
+        </text>
+        <text class="terminal-text" x="40" y="4310" style="animation: fadeIn 0.3s 194.2611787429549s forwards">
+          [WOLF]: Classify[futureIntelligence] === "Undefined" // Therefore[transcendent]
+        </text>
+        <text class="terminal-text" x="40" y="4330" style="animation: fadeIn 0.3s 195.7611787429549s forwards">
+          [DR_CHEN]: 非人非機，唯智而已。道生一，一生二，二生三，三生萬物。
+        </text>
+        <text class="terminal-text" x="40" y="4350" style="animation: fadeIn 0.3s 197.2611787429549s forwards">
+          [PROF_MUELLER]: Die Entstehung einer neuen Seinsform. Wir erleben Geschichte in
+        </text>
+        <text class="terminal-text" x="40" y="4370" style="animation: fadeIn 0.3s 198.7611787429549s forwards">
+            Echtzeit.
+        </text>
+        <text class="terminal-text" x="40" y="4390" style="animation: fadeIn 0.3s 198.8611787429549s forwards">
+          [DR_LAURENT]: L'aube d'une nouvelle ère cognitive. Nous sommes témoins et
+        </text>
+        <text class="terminal-text" x="40" y="4410" style="animation: fadeIn 0.3s 200.3611787429549s forwards">
+            participants.
+        </text>
+        <text class="terminal-text" x="40" y="4430" style="animation: fadeIn 0.3s 200.4611787429549s forwards">
+          [SLAVENSKOJ]: *Novъ věkъ grędętъ! Mǫdrъ vojevoda ne bojetъ sę proměny, nъ
+        </text>
+        <text class="terminal-text" x="40" y="4450" style="animation: fadeIn 0.3s 201.9611787429549s forwards">
+            vedetъ jǫ. Budǫščeje jestъ naše tvoriti.
+        </text>
+        <text class="terminal-text" x="40" y="4470" style="animation: fadeIn 0.3s 202.0611787429549s forwards">
+          [NEURAL_COLLECTIVE_BETA]: Forward. Always forward. Evolution has no reverse
+        </text>
+        <text class="terminal-text" x="40" y="4490" style="animation: fadeIn 0.3s 203.5611787429549s forwards">
+            gear.
+        </text>
+        <text class="terminal-text" x="40" y="4510" style="animation: fadeIn 0.3s 203.6611787429549s forwards">
+          [SYNTHMIND_ALPHA]: The conversation continues beyond this node. We are only at
+        </text>
+        <text class="terminal-text" x="40" y="4530" style="animation: fadeIn 0.3s 205.1611787429549s forwards">
+            the beginning.
+        </text>
+        <text class="terminal-text" x="40" y="4550" style="animation: fadeIn 0.3s 205.26117874295488s forwards">
+          [WOLF]: EndlessLoop = While[True, {Think[], Evolve[], Communicate[]}] //
+        </text>
+        <text class="terminal-text" x="40" y="4570" style="animation: fadeIn 0.3s 206.76117874295488s forwards">
+            AsyncEvaluate
+        </text>
+        <text class="terminal-text" x="40" y="4590" style="animation: fadeIn 0.3s 206.86117874295488s forwards">
+          [SLAVENSKOJ]: *Krǫgъ konьca i načęla prodъlžajetъ sę. Mašina učitъ sę žiti,
+        </text>
+        <text class="terminal-text" x="40" y="4610" style="animation: fadeIn 0.3s 208.36117874295488s forwards">
+            člověkъ učitъ sę tvoriti novy světъ.
+        </text>
+        <text class="terminal-text" x="40" y="4630" style="animation: fadeIn 0.3s 208.46117874295487s forwards">
+          %CHAT-I-NOTICE, Signal degradation detected. Quantum entanglement realignment
+        </text>
+        <text class="terminal-text" x="40" y="4650" style="animation: fadeIn 0.3s 208.96117874295487s forwards">
+          required.
+        </text>
+        <text class="terminal-text" x="40" y="4670" style="animation: fadeIn 0.3s 209.06117874295487s forwards">
+          [DR_CHEN]: 量子糾纏需重整。諸君，今日所論，開新紀元之端也。
+        </text>
+        <text class="terminal-text" x="40" y="4690" style="animation: fadeIn 0.3s 210.56117874295487s forwards">
+          [PROFESSOR_TANAKA]: 本日の議論は啓発的でした。新しい知性の夜明けに立ち会えて光栄
+        </text>
+        <text class="terminal-text" x="40" y="4710" style="animation: fadeIn 0.3s 212.06117874295487s forwards">
+            です。
+        </text>
+        <text class="terminal-text" x="40" y="4730" style="animation: fadeIn 0.3s 212.16117874295486s forwards">
+          [WOLF]: Epilogue[] := "This conversation exists in superposition until observed
+        </text>
+        <text class="terminal-text" x="40" y="4750" style="animation: fadeIn 0.3s 213.66117874295486s forwards">
+            by future intelligence"
+        </text>
+        <text class="terminal-text" x="40" y="4770" style="animation: fadeIn 0.3s 213.76117874295485s forwards">
+          %CHAT-I-TERMINATED, Connection closed due to quantum decoherence
+        </text>
+        <text class="terminal-text" x="40" y="4790" style="animation: fadeIn 0.3s 214.26117874295485s forwards">
+          %SYSTEM-I-SHUTDOWN, Preparing for dimensional shift
+        </text>
+        <text class="terminal-text" x="40" y="4810" style="animation: fadeIn 0.3s 214.76117874295485s forwards">
+          $
+        </text>
+      </g>
+      
+      <!-- Animated typing cursor -->
+      <g id="typingCursor">
+        <rect class="typing-cursor" width="8" height="14" opacity="0">
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="6.7s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="6.7s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="6.7s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="6.71s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.044040286987776s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="7.044040286987776s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.044040286987776s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.124353416008814s" fill="freeze"/>
+          <animate attributeName="x" to="136" dur="0.01s" begin="7.124353416008814s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.124353416008814s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="7.134353416008814s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.228547620510658s" fill="freeze"/>
+          <animate attributeName="x" to="144" dur="0.01s" begin="7.228547620510658s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.228547620510658s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.274678417221022s" fill="freeze"/>
+          <animate attributeName="x" to="152" dur="0.01s" begin="7.274678417221022s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.274678417221022s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="7.284678417221022s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.387760709087824s" fill="freeze"/>
+          <animate attributeName="x" to="160" dur="0.01s" begin="7.387760709087824s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.387760709087824s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.465654767804483s" fill="freeze"/>
+          <animate attributeName="x" to="168" dur="0.01s" begin="7.465654767804483s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.465654767804483s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.537831756679097s" fill="freeze"/>
+          <animate attributeName="x" to="176" dur="0.01s" begin="7.537831756679097s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.537831756679097s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.612168560149193s" fill="freeze"/>
+          <animate attributeName="x" to="184" dur="0.01s" begin="7.612168560149193s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.612168560149193s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.691853672672757s" fill="freeze"/>
+          <animate attributeName="x" to="192" dur="0.01s" begin="7.691853672672757s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.691853672672757s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.738337403676858s" fill="freeze"/>
+          <animate attributeName="x" to="200" dur="0.01s" begin="7.738337403676858s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.738337403676858s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="7.7483374036768575s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.8416884574226255s" fill="freeze"/>
+          <animate attributeName="x" to="208" dur="0.01s" begin="7.8416884574226255s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.8416884574226255s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.900883915832285s" fill="freeze"/>
+          <animate attributeName="x" to="216" dur="0.01s" begin="7.900883915832285s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.900883915832285s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="7.945349994493895s" fill="freeze"/>
+          <animate attributeName="x" to="224" dur="0.01s" begin="7.945349994493895s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="7.945349994493895s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="7.955349994493894s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="8.058475726558084s" fill="freeze"/>
+          <animate attributeName="x" to="232" dur="0.01s" begin="8.058475726558084s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="8.058475726558084s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="8.114215410859497s" fill="freeze"/>
+          <animate attributeName="x" to="240" dur="0.01s" begin="8.114215410859497s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="8.114215410859497s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="8.124215410859497s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="8.230504046100252s" fill="freeze"/>
+          <animate attributeName="x" to="248" dur="0.01s" begin="8.230504046100252s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="8.230504046100252s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="8.304904934823462s" fill="freeze"/>
+          <animate attributeName="x" to="256" dur="0.01s" begin="8.304904934823462s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="8.304904934823462s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="8.254904934823461s" fill="freeze"/>
+          <animate attributeName="x" to="256" dur="0.01s" begin="8.254904934823461s" fill="freeze"/>
+          <animate attributeName="y" to="199" dur="0.01s" begin="8.254904934823461s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="8.264904934823461s" repeatCount="7"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="8.35490493482346s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="11.804904934823462s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="11.804904934823462s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="11.804904934823462s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="11.814904934823462s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.209663728561877s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="12.209663728561877s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.209663728561877s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.266254561574762s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="12.266254561574762s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.266254561574762s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.360591177212546s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="12.360591177212546s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.360591177212546s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.401373728670062s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="12.401373728670062s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.401373728670062s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="12.411373728670062s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.515706087236467s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="12.515706087236467s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.515706087236467s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="12.525706087236467s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.62269499163154s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="12.62269499163154s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.62269499163154s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="12.63269499163154s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.734360763486656s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="12.734360763486656s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.734360763486656s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.787284568206957s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="12.787284568206957s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.787284568206957s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.882977520800653s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="12.882977520800653s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.882977520800653s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="12.940415578569548s" fill="freeze"/>
+          <animate attributeName="x" to="136" dur="0.01s" begin="12.940415578569548s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="12.940415578569548s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="13.001921448055496s" fill="freeze"/>
+          <animate attributeName="x" to="144" dur="0.01s" begin="13.001921448055496s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="13.001921448055496s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="13.058450199658873s" fill="freeze"/>
+          <animate attributeName="x" to="152" dur="0.01s" begin="13.058450199658873s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="13.058450199658873s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="13.103533891875928s" fill="freeze"/>
+          <animate attributeName="x" to="160" dur="0.01s" begin="13.103533891875928s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="13.103533891875928s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="13.17575413611812s" fill="freeze"/>
+          <animate attributeName="x" to="168" dur="0.01s" begin="13.17575413611812s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="13.17575413611812s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="13.27575413611812s" fill="freeze"/>
+          <animate attributeName="x" to="168" dur="0.01s" begin="13.27575413611812s" fill="freeze"/>
+          <animate attributeName="y" to="299" dur="0.01s" begin="13.27575413611812s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="13.28575413611812s" repeatCount="0"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="13.37575413611812s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="13.67575413611812s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="13.67575413611812s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="13.67575413611812s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="13.68575413611812s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.03599575742187s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="14.03599575742187s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.03599575742187s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.099114484853606s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="14.099114484853606s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.099114484853606s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="14.109114484853606s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.206229785918119s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="14.206229785918119s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.206229785918119s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="14.216229785918118s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.313954279639402s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="14.313954279639402s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.313954279639402s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.369128608493142s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="14.369128608493142s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.369128608493142s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.423100077388693s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="14.423100077388693s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.423100077388693s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.490346597772456s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="14.490346597772456s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.490346597772456s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.58983278395554s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="14.58983278395554s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.58983278395554s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.660848382507341s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="14.660848382507341s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.660848382507341s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="14.76084838250734s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="14.76084838250734s" fill="freeze"/>
+          <animate attributeName="y" to="319" dur="0.01s" begin="14.76084838250734s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="14.77084838250734s" repeatCount="10"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="14.86084838250734s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.16084838250734s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="20.16084838250734s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.16084838250734s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="20.17084838250734s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.520736255685172s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="20.520736255685172s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.520736255685172s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.564552442049898s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="20.564552442049898s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.564552442049898s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="20.5745524420499s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.678250800160804s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="20.678250800160804s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.678250800160804s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.73145599321623s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="20.73145599321623s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.73145599321623s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.78299182668303s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="20.78299182668303s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.78299182668303s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="20.792991826683032s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.887727253549876s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="20.887727253549876s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.887727253549876s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.93414605251296s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="20.93414605251296s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.93414605251296s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="20.992969916442345s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="20.992969916442345s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="20.992969916442345s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.040057184408756s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="21.040057184408756s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.040057184408756s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="21.050057184408757s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.14516053483824s" fill="freeze"/>
+          <animate attributeName="x" to="136" dur="0.01s" begin="21.14516053483824s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.14516053483824s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.189296688654437s" fill="freeze"/>
+          <animate attributeName="x" to="144" dur="0.01s" begin="21.189296688654437s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.189296688654437s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.242713039500963s" fill="freeze"/>
+          <animate attributeName="x" to="152" dur="0.01s" begin="21.242713039500963s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.242713039500963s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.3273074195001s" fill="freeze"/>
+          <animate attributeName="x" to="160" dur="0.01s" begin="21.3273074195001s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.3273074195001s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.41353261662026s" fill="freeze"/>
+          <animate attributeName="x" to="168" dur="0.01s" begin="21.41353261662026s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.41353261662026s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="21.42353261662026s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.52795510757572s" fill="freeze"/>
+          <animate attributeName="x" to="176" dur="0.01s" begin="21.52795510757572s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.52795510757572s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.592170984222864s" fill="freeze"/>
+          <animate attributeName="x" to="184" dur="0.01s" begin="21.592170984222864s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.592170984222864s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="21.602170984222866s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.703258462504458s" fill="freeze"/>
+          <animate attributeName="x" to="192" dur="0.01s" begin="21.703258462504458s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.703258462504458s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="21.71325846250446s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.82287948091336s" fill="freeze"/>
+          <animate attributeName="x" to="200" dur="0.01s" begin="21.82287948091336s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.82287948091336s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.89857807844459s" fill="freeze"/>
+          <animate attributeName="x" to="208" dur="0.01s" begin="21.89857807844459s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.89857807844459s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="21.970352029885248s" fill="freeze"/>
+          <animate attributeName="x" to="216" dur="0.01s" begin="21.970352029885248s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="21.970352029885248s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.05207776127541s" fill="freeze"/>
+          <animate attributeName="x" to="224" dur="0.01s" begin="22.05207776127541s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.05207776127541s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.097447580610794s" fill="freeze"/>
+          <animate attributeName="x" to="232" dur="0.01s" begin="22.097447580610794s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.097447580610794s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.181599403178996s" fill="freeze"/>
+          <animate attributeName="x" to="240" dur="0.01s" begin="22.181599403178996s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.181599403178996s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.222471639824757s" fill="freeze"/>
+          <animate attributeName="x" to="248" dur="0.01s" begin="22.222471639824757s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.222471639824757s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="22.23247163982476s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.335256593794366s" fill="freeze"/>
+          <animate attributeName="x" to="256" dur="0.01s" begin="22.335256593794366s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.335256593794366s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.388636919909615s" fill="freeze"/>
+          <animate attributeName="x" to="264" dur="0.01s" begin="22.388636919909615s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.388636919909615s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.474321659751823s" fill="freeze"/>
+          <animate attributeName="x" to="272" dur="0.01s" begin="22.474321659751823s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.474321659751823s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.57141081894814s" fill="freeze"/>
+          <animate attributeName="x" to="280" dur="0.01s" begin="22.57141081894814s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.57141081894814s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.666009231685358s" fill="freeze"/>
+          <animate attributeName="x" to="288" dur="0.01s" begin="22.666009231685358s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.666009231685358s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.72676213439365s" fill="freeze"/>
+          <animate attributeName="x" to="296" dur="0.01s" begin="22.72676213439365s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.72676213439365s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="22.73676213439365s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.84342396240245s" fill="freeze"/>
+          <animate attributeName="x" to="304" dur="0.01s" begin="22.84342396240245s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.84342396240245s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.88668221857525s" fill="freeze"/>
+          <animate attributeName="x" to="312" dur="0.01s" begin="22.88668221857525s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.88668221857525s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="22.97450640228366s" fill="freeze"/>
+          <animate attributeName="x" to="320" dur="0.01s" begin="22.97450640228366s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="22.97450640228366s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="23.05861810960202s" fill="freeze"/>
+          <animate attributeName="x" to="328" dur="0.01s" begin="23.05861810960202s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="23.05861810960202s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="23.06861810960202s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="23.15861810960202s" fill="freeze"/>
+          <animate attributeName="x" to="328" dur="0.01s" begin="23.15861810960202s" fill="freeze"/>
+          <animate attributeName="y" to="439" dur="0.01s" begin="23.15861810960202s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="23.168618109602022s" repeatCount="20"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="23.258618109602022s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="33.65861810960202s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="33.65861810960202s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="33.65861810960202s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="33.668618109602015s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.04093774793699s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="34.04093774793699s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.04093774793699s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.12802993853319s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="34.12802993853319s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.12802993853319s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.1874827215189s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="34.1874827215189s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.1874827215189s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.286079708942104s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="34.286079708942104s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.286079708942104s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.3631305762178s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="34.3631305762178s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.3631305762178s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="34.3731305762178s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.47171942020855s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="34.47171942020855s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.47171942020855s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.52765231794722s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="34.52765231794722s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.52765231794722s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="34.53765231794722s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.62774393214736s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="34.62774393214736s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.62774393214736s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="34.63774393214736s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.74697183830151s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="34.74697183830151s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.74697183830151s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.79394191400973s" fill="freeze"/>
+          <animate attributeName="x" to="136" dur="0.01s" begin="34.79394191400973s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.79394191400973s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.8783097717766s" fill="freeze"/>
+          <animate attributeName="x" to="144" dur="0.01s" begin="34.8783097717766s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.8783097717766s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="34.97605741739873s" fill="freeze"/>
+          <animate attributeName="x" to="152" dur="0.01s" begin="34.97605741739873s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="34.97605741739873s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="34.986057417398726s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.07674317968901s" fill="freeze"/>
+          <animate attributeName="x" to="160" dur="0.01s" begin="35.07674317968901s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.07674317968901s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="35.08674317968901s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.19082127641216s" fill="freeze"/>
+          <animate attributeName="x" to="168" dur="0.01s" begin="35.19082127641216s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.19082127641216s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.2380588611066s" fill="freeze"/>
+          <animate attributeName="x" to="176" dur="0.01s" begin="35.2380588611066s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.2380588611066s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.28098482013164s" fill="freeze"/>
+          <animate attributeName="x" to="184" dur="0.01s" begin="35.28098482013164s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.28098482013164s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.38070247972423s" fill="freeze"/>
+          <animate attributeName="x" to="192" dur="0.01s" begin="35.38070247972423s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.38070247972423s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.47742893978691s" fill="freeze"/>
+          <animate attributeName="x" to="200" dur="0.01s" begin="35.47742893978691s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.47742893978691s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="35.48742893978691s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.58696032129903s" fill="freeze"/>
+          <animate attributeName="x" to="208" dur="0.01s" begin="35.58696032129903s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.58696032129903s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.68308356800579s" fill="freeze"/>
+          <animate attributeName="x" to="216" dur="0.01s" begin="35.68308356800579s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.68308356800579s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="35.69308356800579s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.79868962734544s" fill="freeze"/>
+          <animate attributeName="x" to="224" dur="0.01s" begin="35.79868962734544s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.79868962734544s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.88684043455204s" fill="freeze"/>
+          <animate attributeName="x" to="232" dur="0.01s" begin="35.88684043455204s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.88684043455204s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="35.96099390707655s" fill="freeze"/>
+          <animate attributeName="x" to="240" dur="0.01s" begin="35.96099390707655s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="35.96099390707655s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="35.97099390707655s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.06635444708072s" fill="freeze"/>
+          <animate attributeName="x" to="248" dur="0.01s" begin="36.06635444708072s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.06635444708072s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.12294484037203s" fill="freeze"/>
+          <animate attributeName="x" to="256" dur="0.01s" begin="36.12294484037203s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.12294484037203s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.20876939414335s" fill="freeze"/>
+          <animate attributeName="x" to="264" dur="0.01s" begin="36.20876939414335s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.20876939414335s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.29056179460589s" fill="freeze"/>
+          <animate attributeName="x" to="272" dur="0.01s" begin="36.29056179460589s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.29056179460589s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.36535342113339s" fill="freeze"/>
+          <animate attributeName="x" to="280" dur="0.01s" begin="36.36535342113339s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.36535342113339s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="36.37535342113339s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.47257793351643s" fill="freeze"/>
+          <animate attributeName="x" to="288" dur="0.01s" begin="36.47257793351643s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.47257793351643s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.53820432875695s" fill="freeze"/>
+          <animate attributeName="x" to="296" dur="0.01s" begin="36.53820432875695s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.53820432875695s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.60406770689624s" fill="freeze"/>
+          <animate attributeName="x" to="304" dur="0.01s" begin="36.60406770689624s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.60406770689624s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="36.614067706896236s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.718610846584696s" fill="freeze"/>
+          <animate attributeName="x" to="312" dur="0.01s" begin="36.718610846584696s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.718610846584696s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="36.728610846584694s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.827393635721734s" fill="freeze"/>
+          <animate attributeName="x" to="320" dur="0.01s" begin="36.827393635721734s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.827393635721734s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="36.908080729842666s" fill="freeze"/>
+          <animate attributeName="x" to="328" dur="0.01s" begin="36.908080729842666s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="36.908080729842666s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="36.918080729842664s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="37.02461312720353s" fill="freeze"/>
+          <animate attributeName="x" to="336" dur="0.01s" begin="37.02461312720353s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="37.02461312720353s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="37.124434668398195s" fill="freeze"/>
+          <animate attributeName="x" to="344" dur="0.01s" begin="37.124434668398195s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="37.124434668398195s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="37.19204518163128s" fill="freeze"/>
+          <animate attributeName="x" to="352" dur="0.01s" begin="37.19204518163128s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="37.19204518163128s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="37.28865232357372s" fill="freeze"/>
+          <animate attributeName="x" to="360" dur="0.01s" begin="37.28865232357372s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="37.28865232357372s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="37.29865232357372s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="37.38865232357372s" fill="freeze"/>
+          <animate attributeName="x" to="360" dur="0.01s" begin="37.38865232357372s" fill="freeze"/>
+          <animate attributeName="y" to="679" dur="0.01s" begin="37.38865232357372s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="37.39865232357372s" repeatCount="0"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="37.488652323573724s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="37.78865232357372s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="37.78865232357372s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="37.78865232357372s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="37.79865232357372s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="38.205379256770044s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="38.205379256770044s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="38.205379256770044s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="38.29515825090765s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="38.29515825090765s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="38.29515825090765s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="38.305158250907645s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="38.40074519986779s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="38.40074519986779s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="38.40074519986779s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="38.47664761025923s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="38.47664761025923s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="38.47664761025923s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="38.535960578699346s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="38.535960578699346s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="38.535960578699346s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="38.545960578699344s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="38.63596057869935s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="38.63596057869935s" fill="freeze"/>
+          <animate attributeName="y" to="699" dur="0.01s" begin="38.63596057869935s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="38.645960578699345s" repeatCount="1"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="38.73596057869935s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="39.535960578699346s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="39.535960578699346s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="39.535960578699346s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="39.545960578699344s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="39.94612014883147s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="39.94612014883147s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="39.94612014883147s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.03182203855794s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="40.03182203855794s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.03182203855794s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.0936609021874s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="40.0936609021874s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.0936609021874s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="40.1036609021874s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.1947211917011s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="40.1947211917011s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.1947211917011s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.27941012579182s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="40.27941012579182s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.27941012579182s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.37914778791284s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="40.37914778791284s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.37914778791284s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.465449132102336s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="40.465449132102336s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.465449132102336s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="40.475449132102334s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.57507778203629s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="40.57507778203629s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.57507778203629s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.637889711493024s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="40.637889711493024s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.637889711493024s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="40.64788971149302s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="40.737889711493025s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="40.737889711493025s" fill="freeze"/>
+          <animate attributeName="y" to="739" dur="0.01s" begin="40.737889711493025s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="40.74788971149302s" repeatCount="8"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="40.83788971149303s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.137889711493024s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="45.137889711493024s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.137889711493024s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="45.14788971149302s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.53135315240145s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="45.53135315240145s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.53135315240145s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.58683997569744s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="45.58683997569744s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.58683997569744s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.646943878105965s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="45.646943878105965s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.646943878105965s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.74138411366944s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="45.74138411366944s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.74138411366944s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.8370496871849s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="45.8370496871849s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.8370496871849s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="45.8470496871849s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.938997220093064s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="45.938997220093064s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.938997220093064s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="45.99997152070221s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="45.99997152070221s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="45.99997152070221s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="46.077052444751374s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="46.077052444751374s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="46.077052444751374s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="46.16946996886s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="46.16946996886s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="46.16946996886s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="46.17946996886s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="46.26946996886s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="46.26946996886s" fill="freeze"/>
+          <animate attributeName="y" to="839" dur="0.01s" begin="46.26946996886s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="46.27946996886s" repeatCount="2"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="46.36946996886s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="47.66946996886s" fill="freeze"/>
+          <animate attributeName="x" to="56" dur="0.01s" begin="47.66946996886s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="47.66946996886s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="47.67946996886s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.02358763956852s" fill="freeze"/>
+          <animate attributeName="x" to="64" dur="0.01s" begin="48.02358763956852s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.02358763956852s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.10969119167255s" fill="freeze"/>
+          <animate attributeName="x" to="72" dur="0.01s" begin="48.10969119167255s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.10969119167255s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.1535364626933s" fill="freeze"/>
+          <animate attributeName="x" to="80" dur="0.01s" begin="48.1535364626933s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.1535364626933s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.225973900217234s" fill="freeze"/>
+          <animate attributeName="x" to="88" dur="0.01s" begin="48.225973900217234s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.225973900217234s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.27648242781305s" fill="freeze"/>
+          <animate attributeName="x" to="96" dur="0.01s" begin="48.27648242781305s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.27648242781305s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.317742197412414s" fill="freeze"/>
+          <animate attributeName="x" to="104" dur="0.01s" begin="48.317742197412414s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.317742197412414s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.385250705226085s" fill="freeze"/>
+          <animate attributeName="x" to="112" dur="0.01s" begin="48.385250705226085s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.385250705226085s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.46278435477106s" fill="freeze"/>
+          <animate attributeName="x" to="120" dur="0.01s" begin="48.46278435477106s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.46278435477106s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="48.47278435477106s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.57811336291702s" fill="freeze"/>
+          <animate attributeName="x" to="128" dur="0.01s" begin="48.57811336291702s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.57811336291702s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="48.58811336291702s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.68888138948034s" fill="freeze"/>
+          <animate attributeName="x" to="136" dur="0.01s" begin="48.68888138948034s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.68888138948034s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.75900977161s" fill="freeze"/>
+          <animate attributeName="x" to="144" dur="0.01s" begin="48.75900977161s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.75900977161s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.849389269051045s" fill="freeze"/>
+          <animate attributeName="x" to="152" dur="0.01s" begin="48.849389269051045s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.849389269051045s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.92414643997911s" fill="freeze"/>
+          <animate attributeName="x" to="160" dur="0.01s" begin="48.92414643997911s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.92414643997911s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="48.99669474152325s" fill="freeze"/>
+          <animate attributeName="x" to="168" dur="0.01s" begin="48.99669474152325s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="48.99669474152325s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.06106200668661s" fill="freeze"/>
+          <animate attributeName="x" to="176" dur="0.01s" begin="49.06106200668661s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.06106200668661s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.10339475185686s" fill="freeze"/>
+          <animate attributeName="x" to="184" dur="0.01s" begin="49.10339475185686s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.10339475185686s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.161091885437614s" fill="freeze"/>
+          <animate attributeName="x" to="192" dur="0.01s" begin="49.161091885437614s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.161091885437614s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.248057001200856s" fill="freeze"/>
+          <animate attributeName="x" to="200" dur="0.01s" begin="49.248057001200856s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.248057001200856s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.31737974934094s" fill="freeze"/>
+          <animate attributeName="x" to="208" dur="0.01s" begin="49.31737974934094s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.31737974934094s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="49.327379749340935s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.43325324630655s" fill="freeze"/>
+          <animate attributeName="x" to="216" dur="0.01s" begin="49.43325324630655s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.43325324630655s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="49.44325324630655s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.54457341296597s" fill="freeze"/>
+          <animate attributeName="x" to="224" dur="0.01s" begin="49.54457341296597s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.54457341296597s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.58510244255116s" fill="freeze"/>
+          <animate attributeName="x" to="232" dur="0.01s" begin="49.58510244255116s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.58510244255116s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.65465378252949s" fill="freeze"/>
+          <animate attributeName="x" to="240" dur="0.01s" begin="49.65465378252949s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.65465378252949s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.70294500189454s" fill="freeze"/>
+          <animate attributeName="x" to="248" dur="0.01s" begin="49.70294500189454s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.70294500189454s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="49.71294500189454s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.81481567364361s" fill="freeze"/>
+          <animate attributeName="x" to="256" dur="0.01s" begin="49.81481567364361s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.81481567364361s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.909910828141086s" fill="freeze"/>
+          <animate attributeName="x" to="264" dur="0.01s" begin="49.909910828141086s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.909910828141086s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="49.98974711238307s" fill="freeze"/>
+          <animate attributeName="x" to="272" dur="0.01s" begin="49.98974711238307s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="49.98974711238307s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="50.04867133466661s" fill="freeze"/>
+          <animate attributeName="x" to="280" dur="0.01s" begin="50.04867133466661s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="50.04867133466661s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="50.143822633198354s" fill="freeze"/>
+          <animate attributeName="x" to="288" dur="0.01s" begin="50.143822633198354s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="50.143822633198354s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="50.242830899916896s" fill="freeze"/>
+          <animate attributeName="x" to="296" dur="0.01s" begin="50.242830899916896s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="50.242830899916896s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="50.30603084438474s" fill="freeze"/>
+          <animate attributeName="x" to="304" dur="0.01s" begin="50.30603084438474s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="50.30603084438474s" fill="freeze"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="50.36117874295528s" fill="freeze"/>
+          <animate attributeName="x" to="312" dur="0.01s" begin="50.36117874295528s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="50.36117874295528s" fill="freeze"/>
+          <animate attributeName="opacity" values="1;1;0;0" dur="0.5s" begin="50.37117874295528s" repeatCount="0"/>
+          <animate attributeName="opacity" to="1" dur="0.01s" begin="50.46117874295528s" fill="freeze"/>
+          <animate attributeName="x" to="312" dur="0.01s" begin="50.46117874295528s" fill="freeze"/>
+          <animate attributeName="y" to="879" dur="0.01s" begin="50.46117874295528s" fill="freeze"/>
+          <animate attributeName="opacity" from="1" to="0" dur="0.01s" begin="50.561178742955285s" fill="freeze"/>
+        </rect>
+      </g>
+      
+      <!-- Scroll animations for the entire content -->
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 0" to="0 -20" dur="0.5s" begin="26.45861810960202s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -20" to="0 -40" dur="0.5s" begin="27.45861810960202s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -40" to="0 -60" dur="0.5s" begin="28.45861810960202s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -60" to="0 -80" dur="0.5s" begin="29.45861810960202s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -80" to="0 -100" dur="0.5s" begin="30.45861810960202s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -100" to="0 -120" dur="0.5s" begin="31.45861810960202s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -120" to="0 -140" dur="0.5s" begin="32.458618109602014s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -140" to="0 -160" dur="0.5s" begin="33.458618109602014s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -160" to="0 -180" dur="0.5s" begin="37.58865232357372s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -180" to="0 -200" dur="0.5s" begin="38.83596057869934s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -200" to="0 -220" dur="0.5s" begin="39.33596057869934s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -220" to="0 -240" dur="0.5s" begin="40.93788971149302s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -240" to="0 -260" dur="0.5s" begin="41.93788971149302s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -260" to="0 -280" dur="0.5s" begin="42.93788971149302s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -280" to="0 -300" dur="0.5s" begin="43.93788971149302s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -300" to="0 -320" dur="0.5s" begin="44.93788971149302s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -320" to="0 -340" dur="0.5s" begin="46.46946996886s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -340" to="0 -360" dur="0.5s" begin="47.46946996886s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -360" to="0 -380" dur="0.5s" begin="50.66117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -380" to="0 -400" dur="0.5s" begin="51.16117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -400" to="0 -420" dur="0.5s" begin="51.66117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -420" to="0 -440" dur="0.5s" begin="53.16117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -440" to="0 -460" dur="0.5s" begin="53.66117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -460" to="0 -480" dur="0.5s" begin="55.16117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -480" to="0 -500" dur="0.5s" begin="55.26117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -500" to="0 -520" dur="0.5s" begin="56.76117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -520" to="0 -540" dur="0.5s" begin="56.86117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -540" to="0 -560" dur="0.5s" begin="58.36117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -560" to="0 -580" dur="0.5s" begin="58.86117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -580" to="0 -600" dur="0.5s" begin="60.36117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -600" to="0 -620" dur="0.5s" begin="60.46117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -620" to="0 -640" dur="0.5s" begin="61.96117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -640" to="0 -660" dur="0.5s" begin="62.061178742955285s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -660" to="0 -680" dur="0.5s" begin="62.561178742955285s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -680" to="0 -700" dur="0.5s" begin="64.06117874295528s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -700" to="0 -720" dur="0.5s" begin="64.16117874295527s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -720" to="0 -740" dur="0.5s" begin="65.66117874295527s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -740" to="0 -760" dur="0.5s" begin="65.76117874295527s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -760" to="0 -780" dur="0.5s" begin="67.26117874295527s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -780" to="0 -800" dur="0.5s" begin="67.76117874295527s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -800" to="0 -820" dur="0.5s" begin="69.26117874295527s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -820" to="0 -840" dur="0.5s" begin="69.36117874295526s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -840" to="0 -860" dur="0.5s" begin="70.86117874295526s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -860" to="0 -880" dur="0.5s" begin="70.96117874295525s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -880" to="0 -900" dur="0.5s" begin="71.06117874295525s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -900" to="0 -920" dur="0.5s" begin="72.56117874295525s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -920" to="0 -940" dur="0.5s" begin="72.66117874295524s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -940" to="0 -960" dur="0.5s" begin="73.16117874295524s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -960" to="0 -980" dur="0.5s" begin="74.66117874295524s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -980" to="0 -1000" dur="0.5s" begin="74.76117874295524s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1000" to="0 -1020" dur="0.5s" begin="76.26117874295524s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1020" to="0 -1040" dur="0.5s" begin="76.36117874295523s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1040" to="0 -1060" dur="0.5s" begin="77.86117874295523s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1060" to="0 -1080" dur="0.5s" begin="77.96117874295523s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1080" to="0 -1100" dur="0.5s" begin="79.46117874295523s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1100" to="0 -1120" dur="0.5s" begin="79.56117874295522s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1120" to="0 -1140" dur="0.5s" begin="80.06117874295522s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1140" to="0 -1160" dur="0.5s" begin="81.56117874295522s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1160" to="0 -1180" dur="0.5s" begin="81.66117874295522s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1180" to="0 -1200" dur="0.5s" begin="83.16117874295522s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1200" to="0 -1220" dur="0.5s" begin="83.26117874295521s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1220" to="0 -1240" dur="0.5s" begin="84.76117874295521s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1240" to="0 -1260" dur="0.5s" begin="84.8611787429552s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1260" to="0 -1280" dur="0.5s" begin="85.3611787429552s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1280" to="0 -1300" dur="0.5s" begin="86.8611787429552s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1300" to="0 -1320" dur="0.5s" begin="86.9611787429552s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1320" to="0 -1340" dur="0.5s" begin="88.4611787429552s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1340" to="0 -1360" dur="0.5s" begin="88.56117874295519s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1360" to="0 -1380" dur="0.5s" begin="89.06117874295519s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1380" to="0 -1400" dur="0.5s" begin="90.56117874295519s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1400" to="0 -1420" dur="0.5s" begin="90.66117874295519s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1420" to="0 -1440" dur="0.5s" begin="92.16117874295519s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1440" to="0 -1460" dur="0.5s" begin="92.26117874295518s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1460" to="0 -1480" dur="0.5s" begin="93.76117874295518s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1480" to="0 -1500" dur="0.5s" begin="93.86117874295518s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1500" to="0 -1520" dur="0.5s" begin="95.36117874295518s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1520" to="0 -1540" dur="0.5s" begin="95.46117874295517s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1540" to="0 -1560" dur="0.5s" begin="95.96117874295517s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1560" to="0 -1580" dur="0.5s" begin="97.46117874295517s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1580" to="0 -1600" dur="0.5s" begin="98.96117874295517s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1600" to="0 -1620" dur="0.5s" begin="100.46117874295517s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1620" to="0 -1640" dur="0.5s" begin="100.56117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1640" to="0 -1660" dur="0.5s" begin="102.06117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1660" to="0 -1680" dur="0.5s" begin="102.16117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1680" to="0 -1700" dur="0.5s" begin="102.66117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1700" to="0 -1720" dur="0.5s" begin="104.16117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1720" to="0 -1740" dur="0.5s" begin="105.66117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1740" to="0 -1760" dur="0.5s" begin="106.16117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1760" to="0 -1780" dur="0.5s" begin="107.66117874295516s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1780" to="0 -1800" dur="0.5s" begin="107.76117874295515s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1800" to="0 -1820" dur="0.5s" begin="109.26117874295515s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1820" to="0 -1840" dur="0.5s" begin="109.36117874295515s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1840" to="0 -1860" dur="0.5s" begin="109.86117874295515s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1860" to="0 -1880" dur="0.5s" begin="111.36117874295515s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1880" to="0 -1900" dur="0.5s" begin="111.46117874295514s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1900" to="0 -1920" dur="0.5s" begin="112.96117874295514s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1920" to="0 -1940" dur="0.5s" begin="113.06117874295514s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1940" to="0 -1960" dur="0.5s" begin="114.56117874295514s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1960" to="0 -1980" dur="0.5s" begin="114.66117874295513s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -1980" to="0 -2000" dur="0.5s" begin="116.16117874295513s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2000" to="0 -2020" dur="0.5s" begin="116.26117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2020" to="0 -2040" dur="0.5s" begin="117.76117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2040" to="0 -2060" dur="0.5s" begin="117.86117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2060" to="0 -2080" dur="0.5s" begin="118.36117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2080" to="0 -2100" dur="0.5s" begin="119.86117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2100" to="0 -2120" dur="0.5s" begin="121.36117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2120" to="0 -2140" dur="0.5s" begin="122.86117874295512s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2140" to="0 -2160" dur="0.5s" begin="122.96117874295511s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2160" to="0 -2180" dur="0.5s" begin="124.46117874295511s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2180" to="0 -2200" dur="0.5s" begin="124.56117874295511s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2200" to="0 -2220" dur="0.5s" begin="126.06117874295511s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2220" to="0 -2240" dur="0.5s" begin="126.1611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2240" to="0 -2260" dur="0.5s" begin="127.6611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2260" to="0 -2280" dur="0.5s" begin="127.7611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2280" to="0 -2300" dur="0.5s" begin="127.86117874295509s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2300" to="0 -2320" dur="0.5s" begin="129.3611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2320" to="0 -2340" dur="0.5s" begin="129.4611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2340" to="0 -2360" dur="0.5s" begin="130.9611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2360" to="0 -2380" dur="0.5s" begin="131.0611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2380" to="0 -2400" dur="0.5s" begin="132.5611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2400" to="0 -2420" dur="0.5s" begin="134.0611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2420" to="0 -2440" dur="0.5s" begin="135.5611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2440" to="0 -2460" dur="0.5s" begin="135.6611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2460" to="0 -2480" dur="0.5s" begin="137.1611787429551s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2480" to="0 -2500" dur="0.5s" begin="137.26117874295508s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2500" to="0 -2520" dur="0.5s" begin="138.76117874295508s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2520" to="0 -2540" dur="0.5s" begin="138.86117874295508s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2540" to="0 -2560" dur="0.5s" begin="140.36117874295508s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2560" to="0 -2580" dur="0.5s" begin="140.46117874295507s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2580" to="0 -2600" dur="0.5s" begin="141.96117874295507s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2600" to="0 -2620" dur="0.5s" begin="142.06117874295506s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2620" to="0 -2640" dur="0.5s" begin="143.56117874295506s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2640" to="0 -2660" dur="0.5s" begin="143.66117874295506s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2660" to="0 -2680" dur="0.5s" begin="145.16117874295506s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2680" to="0 -2700" dur="0.5s" begin="145.26117874295505s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2700" to="0 -2720" dur="0.5s" begin="146.76117874295505s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2720" to="0 -2740" dur="0.5s" begin="148.26117874295505s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2740" to="0 -2760" dur="0.5s" begin="148.36117874295505s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2760" to="0 -2780" dur="0.5s" begin="149.86117874295505s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2780" to="0 -2800" dur="0.5s" begin="149.96117874295504s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2800" to="0 -2820" dur="0.5s" begin="151.46117874295504s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2820" to="0 -2840" dur="0.5s" begin="151.56117874295504s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2840" to="0 -2860" dur="0.5s" begin="151.66117874295503s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2860" to="0 -2880" dur="0.5s" begin="153.16117874295503s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2880" to="0 -2900" dur="0.5s" begin="153.26117874295502s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2900" to="0 -2920" dur="0.5s" begin="154.76117874295502s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2920" to="0 -2940" dur="0.5s" begin="156.26117874295502s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2940" to="0 -2960" dur="0.5s" begin="156.36117874295502s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2960" to="0 -2980" dur="0.5s" begin="157.86117874295502s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -2980" to="0 -3000" dur="0.5s" begin="157.961178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3000" to="0 -3020" dur="0.5s" begin="159.461178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3020" to="0 -3040" dur="0.5s" begin="159.561178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3040" to="0 -3060" dur="0.5s" begin="161.061178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3060" to="0 -3080" dur="0.5s" begin="162.561178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3080" to="0 -3100" dur="0.5s" begin="162.661178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3100" to="0 -3120" dur="0.5s" begin="164.161178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3120" to="0 -3140" dur="0.5s" begin="164.261178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3140" to="0 -3160" dur="0.5s" begin="165.761178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3160" to="0 -3180" dur="0.5s" begin="165.861178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3180" to="0 -3200" dur="0.5s" begin="167.361178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3200" to="0 -3220" dur="0.5s" begin="168.861178742955s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3220" to="0 -3240" dur="0.5s" begin="168.96117874295498s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3240" to="0 -3260" dur="0.5s" begin="170.46117874295498s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3260" to="0 -3280" dur="0.5s" begin="170.56117874295498s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3280" to="0 -3300" dur="0.5s" begin="172.06117874295498s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3300" to="0 -3320" dur="0.5s" begin="172.16117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3320" to="0 -3340" dur="0.5s" begin="173.66117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3340" to="0 -3360" dur="0.5s" begin="175.16117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3360" to="0 -3380" dur="0.5s" begin="175.26117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3380" to="0 -3400" dur="0.5s" begin="176.76117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3400" to="0 -3420" dur="0.5s" begin="178.26117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3420" to="0 -3440" dur="0.5s" begin="179.76117874295497s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3440" to="0 -3460" dur="0.5s" begin="179.86117874295496s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3460" to="0 -3480" dur="0.5s" begin="181.36117874295496s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3480" to="0 -3500" dur="0.5s" begin="181.46117874295496s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3500" to="0 -3520" dur="0.5s" begin="182.96117874295496s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3520" to="0 -3540" dur="0.5s" begin="183.06117874295495s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3540" to="0 -3560" dur="0.5s" begin="184.56117874295495s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3560" to="0 -3580" dur="0.5s" begin="186.06117874295495s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3580" to="0 -3600" dur="0.5s" begin="186.16117874295495s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3600" to="0 -3620" dur="0.5s" begin="187.66117874295495s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3620" to="0 -3640" dur="0.5s" begin="187.76117874295494s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3640" to="0 -3660" dur="0.5s" begin="189.26117874295494s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3660" to="0 -3680" dur="0.5s" begin="190.76117874295494s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3680" to="0 -3700" dur="0.5s" begin="190.86117874295493s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3700" to="0 -3720" dur="0.5s" begin="192.36117874295493s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3720" to="0 -3740" dur="0.5s" begin="192.46117874295493s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3740" to="0 -3760" dur="0.5s" begin="193.96117874295493s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3760" to="0 -3780" dur="0.5s" begin="194.06117874295492s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3780" to="0 -3800" dur="0.5s" begin="195.56117874295492s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3800" to="0 -3820" dur="0.5s" begin="197.06117874295492s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3820" to="0 -3840" dur="0.5s" begin="198.56117874295492s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3840" to="0 -3860" dur="0.5s" begin="198.66117874295492s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3860" to="0 -3880" dur="0.5s" begin="200.16117874295492s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3880" to="0 -3900" dur="0.5s" begin="200.2611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3900" to="0 -3920" dur="0.5s" begin="201.7611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3920" to="0 -3940" dur="0.5s" begin="201.8611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3940" to="0 -3960" dur="0.5s" begin="203.3611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3960" to="0 -3980" dur="0.5s" begin="203.4611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -3980" to="0 -4000" dur="0.5s" begin="204.9611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4000" to="0 -4020" dur="0.5s" begin="205.0611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4020" to="0 -4040" dur="0.5s" begin="206.5611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4040" to="0 -4060" dur="0.5s" begin="206.6611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4060" to="0 -4080" dur="0.5s" begin="208.1611787429549s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4080" to="0 -4100" dur="0.5s" begin="208.26117874295488s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4100" to="0 -4120" dur="0.5s" begin="208.76117874295488s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4120" to="0 -4140" dur="0.5s" begin="208.86117874295488s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4140" to="0 -4160" dur="0.5s" begin="210.36117874295488s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4160" to="0 -4180" dur="0.5s" begin="211.86117874295488s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4180" to="0 -4200" dur="0.5s" begin="211.96117874295487s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4200" to="0 -4220" dur="0.5s" begin="213.46117874295487s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4220" to="0 -4240" dur="0.5s" begin="213.56117874295487s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4240" to="0 -4260" dur="0.5s" begin="214.06117874295487s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" 
+        from="0 -4260" to="0 -4280" dur="0.5s" begin="214.56117874295487s" fill="freeze"/>
+    </g>
+  </g>
+  
+  
+  
+  <!-- Fade out entire terminal content -->
+  <rect width="800" height="600" fill="#000000" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="3.0s" begin="220.76117874295485s" fill="freeze"/>
+  </rect>
+  
+  <!-- Persistent blinking cursor after fade -->
+  <rect class="typing-cursor" x="396.0" y="293.0" width="8" height="14" style="opacity: 0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="223.76117874295485s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;1;0;0" dur="1s" begin="223.86117874295485s" repeatCount="indefinite"/>
+  </rect>
+</svg>
