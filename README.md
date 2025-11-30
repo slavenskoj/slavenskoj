@@ -49,7 +49,7 @@ No personal information available.
 - **Slavic Personal Names: History and Analysis**  
   *Type:* Conference Presentation — Univerzita Konštantína Filozofa v Nitre  
   *Language:* English  
-  *URL:* [Slovenská jazykovedná spoločnosť pri Jazykovednom ústave Ľ. Štúra SAV, v. v. i.](https://www.juls.savba.sk/sjs_kmj34.html) 
+  *URL:* [Slovenská jazykovedná spoločnosť pri Jazykovednom ústave Ľ. Štúra SAV, v. v. i.](https://www.juls.savba.sk/sjs_kmj34.html)
   *Location:* Slovakia  
   *Added:* 2025-11-26  
   *Last Modified:* 2025-11-30  
